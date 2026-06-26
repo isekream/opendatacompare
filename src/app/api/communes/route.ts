@@ -4,7 +4,7 @@ import {
   formatChf,
   getSpendingDataset,
   searchGemeinden,
-} from "@/lib/spending/zh-spending";
+} from "@/lib/spending/ch-spending";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);

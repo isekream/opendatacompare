@@ -1,6 +1,6 @@
 import { ReportShell } from "@/components/report-shell";
 import { GemeindeSearch } from "@/components/gemeinde-search";
-import { getSpendingDataset } from "@/lib/spending/zh-spending";
+import { getSpendingDataset } from "@/lib/spending/ch-spending";
 
 const dataset = getSpendingDataset();
 
@@ -10,7 +10,7 @@ export default function Home() {
       <div className="mx-auto flex max-w-xl flex-col gap-8 text-center">
         <div className="space-y-4">
           <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">
-            Canton Zürich · {dataset.year}
+            Switzerland · {dataset.year}
           </p>
           <h1 className="text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
             Does your municipality spend more or less per resident than similar
@@ -18,7 +18,8 @@ export default function Home() {
           </h1>
           <p className="text-base text-muted-foreground text-balance sm:text-lg">
             One clear answer from official Gemeinde data — operating expenditure
-            per resident, compared to municipalities of similar size.
+            per resident, compared to municipalities of similar size across
+            Switzerland.
           </p>
         </div>
 
@@ -27,7 +28,7 @@ export default function Home() {
         </div>
 
         <p className="text-xs text-muted-foreground">
-          {dataset.coverage.communeCount} municipalities in Canton Zürich · Source:{" "}
+          {dataset.coverage.communeCount} municipalities ({dataset.coverage.scope}) · Source:{" "}
           <a
             href={dataset.source.url}
             className="underline underline-offset-2 hover:text-foreground"

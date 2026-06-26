@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "OpenDataCompare — Municipal spending reports",
   description:
-    "Does your municipality spend more or less per resident than similar towns? Official Gemeinde data for Canton Zürich.",
+    "Does your municipality spend more or less per resident than similar towns? Official EFV Finanzstatistik for Swiss municipalities ≥5,000 residents.",
   metadataBase: new URL("https://opendatacompare.com"),
   openGraph: {
     title: "OpenDataCompare",

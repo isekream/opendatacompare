@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { Search } from "lucide-react";
 
 import { Input } from "@/components/ui/input";
-import { searchGemeinden } from "@/lib/spending/zh-spending";
+import { searchGemeinden } from "@/lib/spending/ch-spending";
 import type { GemeindeSpending } from "@/lib/spending/types";
 
 type GemeindeSearchProps = {

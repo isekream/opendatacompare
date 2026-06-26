@@ -1,4 +1,4 @@
-import dataset from "../../../data/ch/zh-gemeinde-spending.json";
+import dataset from "../../../data/ch/ch-gemeinde-spending.json";
 import type {
   GemeindeSpending,
   PeerBand,

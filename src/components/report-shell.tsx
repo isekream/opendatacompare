@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { ModeToggle } from "@/components/mode-toggle";
 import { DataMetaBar } from "@/components/dashboard/data-meta-bar";
 import { cn } from "@/lib/utils";
-import { getSpendingDataset } from "@/lib/spending/zh-spending";
+import { getSpendingDataset } from "@/lib/spending/ch-spending";
 
 type ReportShellProps = {
   title?: string;
@@ -62,7 +62,7 @@ export function ReportShell({ title, description, children }: ReportShellProps) 
         items={[
           { label: "source", value: dataset.source.name },
           { label: "year", value: String(dataset.year) },
-          { label: "coverage", value: `Canton ${dataset.coverage.canton}` },
+          { label: "coverage", value: dataset.coverage.scope },
         ]}
       />
     </div>

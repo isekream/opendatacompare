@@ -11,7 +11,7 @@ import {
 } from "recharts";
 
 import { useChartTheme } from "@/components/charts/use-chart-theme";
-import { formatChf, getSpendingDataset } from "@/lib/spending/zh-spending";
+import { formatChf, getSpendingDataset } from "@/lib/spending/ch-spending";
 import type { ExpenditureComponentId, GemeindeSpending } from "@/lib/spending/types";
 
 const COMPONENT_HEX: Record<ExpenditureComponentId, string> = {

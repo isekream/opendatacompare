@@ -43,7 +43,7 @@ export type SpendingDataset = {
   year: number;
   coverage: {
     level: string;
-    canton: string;
+    scope: string;
     communeCount: number;
   };
   source: {

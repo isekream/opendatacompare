@@ -13,7 +13,7 @@ import {
 } from "recharts";
 
 import { useChartTheme } from "@/components/charts/use-chart-theme";
-import { formatChf } from "@/lib/spending/zh-spending";
+import { formatChf } from "@/lib/spending/ch-spending";
 import type { GemeindeSpending } from "@/lib/spending/types";
 
 type PeerComparisonChartProps = {

@@ -14,7 +14,7 @@ import {
   formatPopulation,
   getAllGemeindeBfsNumbers,
   getSpendingDataset,
-} from "@/lib/spending/zh-spending";
+} from "@/lib/spending/ch-spending";
 
 type PageProps = {
   params: Promise<{ bfs: string }>;
@@ -83,7 +83,7 @@ export default async function GemeindeReportPage({ params }: PageProps) {
             {formatChf(commune.operatingExpenditure.value)}
           </p>
           <p className="mt-1 text-sm text-muted-foreground">
-            {formatPopulation(commune.population)} residents · Canton Zürich ·{" "}
+            {formatPopulation(commune.population)} residents · {commune.canton} ·{" "}
             {dataset.year}
           </p>
 
@@ -97,7 +97,7 @@ export default async function GemeindeReportPage({ params }: PageProps) {
 
         <ReportPanel
           title="Compared to similar municipalities"
-          description={`Peers are the ${peers.length} Zürich municipalities closest in population size (${formatPopulation(minPeerPopulation)}–${formatPopulation(maxPeerPopulation)} residents).`}
+          description={`Peers are the ${peers.length} Swiss municipalities closest in population size (${formatPopulation(minPeerPopulation)}–${formatPopulation(maxPeerPopulation)} residents).`}
         >
           <PeerComparisonChart
             commune={commune}
