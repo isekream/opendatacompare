@@ -34,6 +34,10 @@ const SIMPLE_INDICATOR_FILES = [
     format: "currency",
     unit: "CHF",
     unitLabel: "CHF per resident",
+    methodology: {
+      summary: "Municipal equity (Eigenkapital) divided by resident population.",
+      notes: ["Source: Gemeindekennziffern indicator 414, Kanton Zürich OGD."],
+    },
   },
   {
     id: "debt_per_capita",
@@ -43,6 +47,10 @@ const SIMPLE_INDICATOR_FILES = [
     format: "currency",
     unit: "CHF",
     unitLabel: "CHF per resident",
+    methodology: {
+      summary: "Municipal debt (Fremdkapital) divided by resident population.",
+      notes: ["Source: Gemeindekennziffern indicator 416, Kanton Zürich OGD."],
+    },
   },
   {
     id: "gross_debt_ratio",
@@ -53,6 +61,14 @@ const SIMPLE_INDICATOR_FILES = [
     format: "percent",
     unit: "%",
     unitLabel: "percent of assets",
+    methodology: {
+      summary:
+        "Debt as a percentage of total municipal assets (Bruttoverschuldungsanteil).",
+      notes: [
+        "Useful for comparing leverage independent of commune size.",
+        "Source: Gemeindekennziffern indicator 413, Kanton Zürich OGD.",
+      ],
+    },
   },
   {
     id: "investment_share",
@@ -63,6 +79,14 @@ const SIMPLE_INDICATOR_FILES = [
     format: "percent",
     unit: "%",
     unitLabel: "percent of expenditure",
+    methodology: {
+      summary:
+        "Share of municipal expenditure allocated to investments (Investitionsanteil).",
+      notes: [
+        "Complements per-capita operating spend by showing capital allocation.",
+        "Source: Gemeindekennziffern indicator 418, Kanton Zürich OGD.",
+      ],
+    },
   },
 ];
 
@@ -74,6 +98,22 @@ const OPERATING_METRIC = {
   format: "currency",
   unit: "CHF",
   unitLabel: "CHF per resident per year",
+  methodology: {
+    summary:
+      "Total Nettoaufwand for eight core municipal service areas, expressed per resident.",
+    includes: [
+      "Administration, public order, education, social security",
+      "Health, transport, environment, culture & leisure",
+    ],
+    excludes: [
+      "Finanzen/Steuern (fiscal transfers & tax administration)",
+      "Volkswirtschaft (economic development offsets)",
+    ],
+    notes: [
+      "Source subset: Gemeinde Nettoaufwand from Kanton Zürich OGD CSVs.",
+      "Higher values mean more service spending per resident, not total budget size alone.",
+    ],
+  },
 };
 
 function parseCsvLine(line) {
@@ -218,18 +258,20 @@ async function main() {
       components: OPERATING_COMPONENT_FILES.map(({ id, label }) => ({ id, label })),
     },
     ...SIMPLE_INDICATOR_FILES.map(
-      ({ id, label, description, format, unit, unitLabel }) => ({
+      ({ id, label, description, format, unit, unitLabel, methodology }) => ({
         id,
         label,
         description,
         format,
         unit,
         unitLabel,
+        methodology,
       }),
     ),
   ];
 
   const payload = {
+    schemaVersion: 1,
     year: targetYear,
     coverage: {
       level: "commune",

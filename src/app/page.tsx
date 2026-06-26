@@ -1,117 +1,156 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 
-const features = [
-  {
-    title: "Side-by-side comparisons",
-    description:
-      "Put countries, regions, and metrics next to each other — not buried in spreadsheets or PDFs.",
-  },
-  {
-    title: "Official sources only",
-    description:
-      "Every number links back to the government or statistical agency that published it.",
-  },
-  {
-    title: "Built for everyone",
-    description:
-      "Clear charts and plain language — whether you are a citizen, journalist, or researcher.",
-  },
-] as const;
+import { DashboardShell } from "@/components/dashboard/dashboard-shell";
+import { PanelCard } from "@/components/dashboard/panel-card";
+import { SectionLabel } from "@/components/dashboard/section-label";
+import { StatCard } from "@/components/dashboard/stat-card";
+import { Button } from "@/components/ui/button";
+import { communeSeriesColor } from "@/lib/dashboard/series-colors";
+import {
+  formatMetricValue,
+  getCommuneMetricValue,
+  getMetricDefinition,
+  getZhFinanceDataset,
+  percentileForCommune,
+} from "@/lib/finance/zh-finance";
 
-const launchTopics = [
-  "Municipal expenditure per resident",
-  "Taxes & fiscal indicators",
-  "Debt & investments",
-  "Service spending by function",
-] as const;
+const dataset = getZhFinanceDataset();
+const featuredBfs = [261, 230, 198] as const;
+const operatingMetric = getMetricDefinition("operating_expenditure");
+
+const featuredCommunes = featuredBfs
+  .map((bfs) => dataset.communes.find((c) => c.bfsNumber === bfs))
+  .filter((c): c is NonNullable<typeof c> => c !== undefined);
 
 export default function Home() {
   return (
-    <div className="flex min-h-full flex-col">
-      <header className="border-b border-border bg-card/80 backdrop-blur-sm">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-          <div className="flex items-center gap-2 font-semibold tracking-tight">
-            <span
-              aria-hidden
-              className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent text-sm text-white"
-            >
-              OD
-            </span>
-            OpenDataCompare
-          </div>
-          <span className="rounded-full border border-border bg-accent-soft px-3 py-1 text-xs font-medium text-accent">
-            Coming soon
-          </span>
+    <DashboardShell
+      title="Municipal finance overview"
+      description="Official Gemeinde indicators for Canton Zürich — operating spend, debt, equity, and investment share per resident."
+    >
+      <div className="mx-auto flex max-w-6xl flex-col gap-6">
+        <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+          <StatCard
+            label="Coverage"
+            title="Canton Zürich"
+            value={`${dataset.coverage.communeCount}`}
+            hint="communes indexed"
+          />
+          <StatCard
+            label="Indicators"
+            title="Finance metrics"
+            value={`${dataset.metrics.length}`}
+            hint="per resident / ratio"
+          />
+          <StatCard
+            label="Reference year"
+            title="Latest release"
+            value={`${dataset.year}`}
+            hint="ZH Gemeindefinanzen"
+          />
+          <StatCard
+            label="Primary metric"
+            title="Operating spend"
+            value={
+              operatingMetric
+                ? formatMetricValue(
+                    getCommuneMetricValue(featuredCommunes[0], "operating_expenditure") ?? 0,
+                    operatingMetric.format,
+                  )
+                : "—"
+            }
+            hint="Zürich · CHF/Einw."
+            accentColor={communeSeriesColor(0)}
+          />
         </div>
-      </header>
 
-      <main className="flex-1">
-        <section className="mx-auto max-w-5xl px-6 pb-16 pt-20 sm:pt-28">
-          <p className="mb-4 text-sm font-medium uppercase tracking-widest text-accent">
-            Global public data platform
-          </p>
-          <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
-            Compare public data,{" "}
-            <span className="text-muted">anywhere.</span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
-            OpenDataCompare brings official government statistics into one place
-            so you can compare jurisdictions, indicators, and trends — starting
-            with how much municipalities spend per resident.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Link
-              href="/compare"
-              className="inline-flex items-center rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-white transition hover:opacity-90"
+        <PanelCard
+          title="Featured comparison"
+          description="Operating expenditure per resident — Zürich, Winterthur, Uster"
+          action={
+            <Button
+              render={<Link href="/compare" />}
+              variant="outline"
+              size="sm"
             >
-              Compare Gemeinde finances
-            </Link>
-            <span className="inline-flex items-center rounded-lg border border-border bg-card px-5 py-2.5 text-sm text-muted">
-              Canton Zürich · 2024 data live
-            </span>
+              Open compare
+              <ArrowRight />
+            </Button>
+          }
+        >
+          <div className="grid gap-3 lg:grid-cols-3">
+            {featuredCommunes.map((commune, index) => {
+              const value =
+                getCommuneMetricValue(commune, "operating_expenditure") ?? 0;
+              return (
+                <StatCard
+                  key={commune.bfsNumber}
+                  label="Operating expenditure"
+                  title={commune.name}
+                  value={formatMetricValue(value, "currency")}
+                  hint={`P${percentileForCommune(commune, "operating_expenditure")} canton percentile`}
+                  accentColor={communeSeriesColor(index)}
+                />
+              );
+            })}
           </div>
-        </section>
+        </PanelCard>
 
-        <section className="border-y border-border bg-card">
-          <div className="mx-auto grid max-w-5xl gap-8 px-6 py-16 sm:grid-cols-3">
-            {features.map((feature) => (
-              <div key={feature.title}>
-                <h2 className="text-base font-semibold">{feature.title}</h2>
-                <p className="mt-2 text-sm leading-relaxed text-muted">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
+        <div className="grid gap-6 lg:grid-cols-2">
+          <PanelCard
+            title="Available indicators"
+            description="Switch between metrics in the compare workspace"
+          >
+            <ul className="space-y-2">
+              {dataset.metrics.map((metric) => (
+                <li
+                  key={metric.id}
+                  className="flex items-start justify-between gap-4 rounded-lg border border-border/50 bg-surface px-3 py-2.5"
+                >
+                  <div>
+                    <p className="text-sm font-medium">{metric.label}</p>
+                    <p className="mt-0.5 text-xs text-muted-foreground">
+                      {metric.description}
+                    </p>
+                  </div>
+                  <span className="shrink-0 font-mono text-[11px] text-muted-foreground">
+                    {metric.unitLabel}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </PanelCard>
 
-        <section className="mx-auto max-w-5xl px-6 py-16">
-          <h2 className="text-2xl font-semibold tracking-tight">
-            Financial comparisons we&apos;re building
-          </h2>
-          <p className="mt-3 max-w-2xl text-muted">
-            Starting with Swiss municipal finances, then expanding via EFV
-            Finanzstatistik and cantonal open data across the country.
-          </p>
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-            {launchTopics.map((topic) => (
-              <li
-                key={topic}
-                className="rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium"
-              >
-                {topic}
-              </li>
-            ))}
-          </ul>
-        </section>
-      </main>
-
-      <footer className="border-t border-border">
-        <div className="mx-auto flex max-w-5xl flex-col gap-2 px-6 py-8 text-sm text-muted sm:flex-row sm:items-center sm:justify-between">
-          <p>© {new Date().getFullYear()} OpenDataCompare</p>
-          <p>Official data. Clear comparisons. No black boxes.</p>
+          <PanelCard
+            title="Roadmap"
+            description="Expanding beyond Canton Zürich"
+          >
+            <div className="space-y-3">
+              {[
+                "EFV Finanzstatistik — nationwide Gemeinden ≥5k",
+                "Additional cantons via OGD portals",
+                "Tax rates & multi-year trend panels",
+                "Shareable comparison URLs",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="rounded-lg border border-border/50 bg-surface px-3 py-2.5 text-sm"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+            <div className="mt-4">
+              <SectionLabel>Get started</SectionLabel>
+              <Button render={<Link href="/compare" />} className="mt-2">
+                Compare Gemeinde finances
+                <ArrowRight />
+              </Button>
+            </div>
+          </PanelCard>
         </div>
-      </footer>
-    </div>
+      </div>
+    </DashboardShell>
   );
 }

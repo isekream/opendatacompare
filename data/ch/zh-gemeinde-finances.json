@@ -1,4 +1,5 @@
 {
+  "schemaVersion": 1,
   "year": 2024,
   "coverage": {
     "level": "commune",
@@ -20,6 +21,21 @@
       "format": "currency",
       "unit": "CHF",
       "unitLabel": "CHF per resident per year",
+      "methodology": {
+        "summary": "Total Nettoaufwand for eight core municipal service areas, expressed per resident.",
+        "includes": [
+          "Administration, public order, education, social security",
+          "Health, transport, environment, culture & leisure"
+        ],
+        "excludes": [
+          "Finanzen/Steuern (fiscal transfers & tax administration)",
+          "Volkswirtschaft (economic development offsets)"
+        ],
+        "notes": [
+          "Source subset: Gemeinde Nettoaufwand from Kanton Zürich OGD CSVs.",
+          "Higher values mean more service spending per resident, not total budget size alone."
+        ]
+      },
       "components": [
         {
           "id": "administration",
@@ -61,7 +77,13 @@
       "description": "Municipal equity (Eigenkapital) per resident.",
       "format": "currency",
       "unit": "CHF",
-      "unitLabel": "CHF per resident"
+      "unitLabel": "CHF per resident",
+      "methodology": {
+        "summary": "Municipal equity (Eigenkapital) divided by resident population.",
+        "notes": [
+          "Source: Gemeindekennziffern indicator 414, Kanton Zürich OGD."
+        ]
+      }
     },
     {
       "id": "debt_per_capita",
@@ -69,7 +91,13 @@
       "description": "Municipal debt (Fremdkapital) per resident.",
       "format": "currency",
       "unit": "CHF",
-      "unitLabel": "CHF per resident"
+      "unitLabel": "CHF per resident",
+      "methodology": {
+        "summary": "Municipal debt (Fremdkapital) divided by resident population.",
+        "notes": [
+          "Source: Gemeindekennziffern indicator 416, Kanton Zürich OGD."
+        ]
+      }
     },
     {
       "id": "gross_debt_ratio",
@@ -77,7 +105,14 @@
       "description": "Debt as a share of total municipal assets (Bruttoverschuldungsanteil).",
       "format": "percent",
       "unit": "%",
-      "unitLabel": "percent of assets"
+      "unitLabel": "percent of assets",
+      "methodology": {
+        "summary": "Debt as a percentage of total municipal assets (Bruttoverschuldungsanteil).",
+        "notes": [
+          "Useful for comparing leverage independent of commune size.",
+          "Source: Gemeindekennziffern indicator 413, Kanton Zürich OGD."
+        ]
+      }
     },
     {
       "id": "investment_share",
@@ -85,7 +120,14 @@
       "description": "Share of municipal expenditure used for investments (Investitionsanteil).",
       "format": "percent",
       "unit": "%",
-      "unitLabel": "percent of expenditure"
+      "unitLabel": "percent of expenditure",
+      "methodology": {
+        "summary": "Share of municipal expenditure allocated to investments (Investitionsanteil).",
+        "notes": [
+          "Complements per-capita operating spend by showing capital allocation.",
+          "Source: Gemeindekennziffern indicator 418, Kanton Zürich OGD."
+        ]
+      }
     }
   ],
   "communes": [
@@ -5403,5 +5445,5 @@
       }
     }
   ],
-  "builtAt": "2026-06-26T09:27:34.814Z"
+  "builtAt": "2026-06-26T11:58:58.647Z"
 }

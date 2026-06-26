@@ -17,6 +17,13 @@ export type FinanceMetricId =
 
 export type MetricFormat = "currency" | "percent";
 
+export type IndicatorMethodology = {
+  summary: string;
+  includes?: string[];
+  excludes?: string[];
+  notes?: string[];
+};
+
 export type MetricDefinition = {
   id: FinanceMetricId;
   label: string;
@@ -24,6 +31,7 @@ export type MetricDefinition = {
   format: MetricFormat;
   unit: string;
   unitLabel: string;
+  methodology?: IndicatorMethodology;
   components?: { id: ExpenditureComponentId; label: string }[];
 };
 
@@ -41,6 +49,7 @@ export type CommuneFinance = {
 };
 
 export type FinanceDataset = {
+  schemaVersion?: number;
   year: number;
   coverage: {
     level: string;

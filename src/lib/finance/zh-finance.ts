@@ -1,4 +1,6 @@
 import dataset from "../../../data/ch/zh-gemeinde-finances.json";
+import { toComparisonDataset } from "@/lib/data/adapters/zh-finance";
+import type { ComparisonDataset } from "@/lib/data/types";
 import type {
   CommuneFinance,
   FinanceDataset,
@@ -11,6 +13,10 @@ const financeDataset = dataset as FinanceDataset;
 
 export function getZhFinanceDataset(): FinanceDataset {
   return financeDataset;
+}
+
+export function getComparisonDataset(): ComparisonDataset {
+  return toComparisonDataset(financeDataset);
 }
 
 export function getMetricDefinition(
@@ -73,6 +79,21 @@ export function percentileForCommune(
   const index = ranked.findIndex((item) => item.bfsNumber === commune.bfsNumber);
   if (index < 0 || ranked.length <= 1) return 0;
   return Math.round(((ranked.length - 1 - index) / (ranked.length - 1)) * 100);
+}
+
+export function getCantonMedianForMetric(metricId: FinanceMetricId): number {
+  const values = financeDataset.communes
+    .map((commune) => getCommuneMetricValue(commune, metricId))
+    .filter((value): value is number => value !== undefined)
+    .sort((a, b) => a - b);
+
+  if (values.length === 0) return 0;
+
+  const mid = Math.floor(values.length / 2);
+  if (values.length % 2 === 0) {
+    return Math.round((values[mid - 1] + values[mid]) / 2);
+  }
+  return values[mid];
 }
 
 export function formatMetricValue(value: number, format: MetricFormat): string {
