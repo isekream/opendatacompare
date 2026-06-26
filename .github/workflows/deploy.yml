@@ -1,0 +1,83 @@
+name: Deploy
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+concurrency:
+  group: deploy-opendatacompare
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Verify build
+        run: |
+          npm ci
+          npm run lint
+          npm run build
+
+      - name: Connect to Tailscale
+        uses: tailscale/github-action@306e68a486fd2350f2bfc3b19fcd143891a4a2d8 # v4
+        with:
+          oauth-client-id: ${{ secrets.TS_OAUTH_CLIENT_ID }}
+          oauth-secret: ${{ secrets.TS_OAUTH_SECRET }}
+          tags: tag:ci
+
+      - name: Deploy to VPS
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+
+          SSH_OPTS="-p 2222 -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no"
+          TARGET="${VPS_USER}@${VPS_HOST}"
+          REMOTE_DIR="/home/deploy/opendatacompare"
+
+          rsync -avz --delete \
+            -e "ssh $SSH_OPTS" \
+            --exclude node_modules \
+            --exclude .next \
+            --exclude .git \
+            ./ "${TARGET}:${REMOTE_DIR}/"
+
+          ssh $SSH_OPTS "$TARGET" bash -s <<'REMOTE'
+          set -euo pipefail
+          cd /home/deploy/opendatacompare
+          npm ci
+          npm run build
+          if pm2 describe opendatacompare >/dev/null 2>&1; then
+            pm2 restart opendatacompare
+          else
+            pm2 start ecosystem.config.cjs
+          fi
+          pm2 save
+          bash scripts/sync-caddy.sh
+          REMOTE
+
+      - name: Health check
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh -p 2222 -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no \
+            "${VPS_USER}@${VPS_HOST}" \
+            'curl -fsS -o /dev/null -w "local:%{http_code}\n" http://127.0.0.1:3003/'
+          curl -fsS -o /dev/null -w "public:%{http_code}\n" https://opendatacompare.com/

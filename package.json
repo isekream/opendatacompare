@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "start": "next start --port 3003 --hostname 127.0.0.1",
+    "lint": "eslint",
+    "deploy": "bash scripts/deploy.sh"
   },
   "dependencies": {
     "next": "16.2.9",

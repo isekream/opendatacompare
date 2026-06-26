@@ -1,0 +1,9 @@
+# BEGIN opendatacompare
+# opendatacompare.com — OpenDataCompare (PM2 on :3003)
+opendatacompare.com, www.opendatacompare.com {
+	@www host www.opendatacompare.com
+	redir @www https://opendatacompare.com{uri} permanent
+
+	reverse_proxy 127.0.0.1:3003
+}
+# END opendatacompare
