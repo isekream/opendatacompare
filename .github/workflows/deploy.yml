@@ -23,6 +23,7 @@ jobs:
       - name: Verify build
         run: |
           npm ci
+          npm run data:build
           npm run lint
           npm run build
 
@@ -58,6 +59,7 @@ jobs:
           set -euo pipefail
           cd /home/deploy/opendatacompare
           npm ci
+          npm run data:build
           npm run build
           if pm2 describe opendatacompare >/dev/null 2>&1; then
             pm2 restart opendatacompare

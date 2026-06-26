@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const features = [
   {
     title: "Side-by-side comparisons",
@@ -17,10 +19,10 @@ const features = [
 ] as const;
 
 const launchTopics = [
-  "Population & housing",
-  "Public finances",
-  "Environment & mobility",
-  "Health & education",
+  "Municipal expenditure per resident",
+  "Taxes & fiscal indicators",
+  "Debt & investments",
+  "Service spending by function",
 ] as const;
 
 export default function Home() {
@@ -54,18 +56,18 @@ export default function Home() {
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">
             OpenDataCompare brings official government statistics into one place
-            so you can compare jurisdictions, indicators, and trends — with full
-            transparency about where every figure comes from.
+            so you can compare jurisdictions, indicators, and trends — starting
+            with how much municipalities spend per resident.
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
-            <a
-              href="mailto:hello@opendatacompare.com"
+            <Link
+              href="/compare"
               className="inline-flex items-center rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-white transition hover:opacity-90"
             >
-              Get early access
-            </a>
+              Compare Gemeinde finances
+            </Link>
             <span className="inline-flex items-center rounded-lg border border-border bg-card px-5 py-2.5 text-sm text-muted">
-              Launching first in Switzerland
+              Canton Zürich · 2024 data live
             </span>
           </div>
         </section>
@@ -85,11 +87,11 @@ export default function Home() {
 
         <section className="mx-auto max-w-5xl px-6 py-16">
           <h2 className="text-2xl font-semibold tracking-tight">
-            What we&apos;ll compare first
+            Financial comparisons we&apos;re building
           </h2>
           <p className="mt-3 max-w-2xl text-muted">
-            Starting with Swiss federal and cantonal open data, then expanding
-            to more countries and agencies.
+            Starting with Swiss municipal finances, then expanding via EFV
+            Finanzstatistik and cantonal open data across the country.
           </p>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2">
             {launchTopics.map((topic) => (

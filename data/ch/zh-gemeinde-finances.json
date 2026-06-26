@@ -1,0 +1,5407 @@
+{
+  "year": 2024,
+  "coverage": {
+    "level": "commune",
+    "canton": "ZH",
+    "communeCount": 161
+  },
+  "source": {
+    "name": "Statistisches Amt des Kantons Zürich",
+    "publisher": "Kanton Zürich",
+    "url": "https://www.zh.ch/de/politik-staat/gemeinden/gemeindeportraet.html",
+    "dataset": "Gemeindefinanzen (OGD)",
+    "license": "NonCommercialAllowed-CommercialAllowed-ReferenceRequired"
+  },
+  "metrics": [
+    {
+      "id": "operating_expenditure",
+      "label": "Operating expenditure per resident",
+      "description": "Sum of municipal Nettoaufwand across core service areas (administration, education, health, social security, transport, environment, culture, public order). Excludes Finanzen/Steuern and Volkswirtschaft, which are mainly fiscal transfers rather than service spending.",
+      "format": "currency",
+      "unit": "CHF",
+      "unitLabel": "CHF per resident per year",
+      "components": [
+        {
+          "id": "administration",
+          "label": "General administration"
+        },
+        {
+          "id": "public_order",
+          "label": "Public order & security"
+        },
+        {
+          "id": "education",
+          "label": "Education"
+        },
+        {
+          "id": "social_security",
+          "label": "Social security"
+        },
+        {
+          "id": "health",
+          "label": "Health"
+        },
+        {
+          "id": "transport",
+          "label": "Transport & telecom"
+        },
+        {
+          "id": "environment",
+          "label": "Environment & spatial planning"
+        },
+        {
+          "id": "culture",
+          "label": "Culture, sport & leisure"
+        }
+      ]
+    },
+    {
+      "id": "equity_per_capita",
+      "label": "Equity per resident",
+      "description": "Municipal equity (Eigenkapital) per resident.",
+      "format": "currency",
+      "unit": "CHF",
+      "unitLabel": "CHF per resident"
+    },
+    {
+      "id": "debt_per_capita",
+      "label": "Debt per resident",
+      "description": "Municipal debt (Fremdkapital) per resident.",
+      "format": "currency",
+      "unit": "CHF",
+      "unitLabel": "CHF per resident"
+    },
+    {
+      "id": "gross_debt_ratio",
+      "label": "Gross debt ratio",
+      "description": "Debt as a share of total municipal assets (Bruttoverschuldungsanteil).",
+      "format": "percent",
+      "unit": "%",
+      "unitLabel": "percent of assets"
+    },
+    {
+      "id": "investment_share",
+      "label": "Investment share of spending",
+      "description": "Share of municipal expenditure used for investments (Investitionsanteil).",
+      "format": "percent",
+      "unit": "%",
+      "unitLabel": "percent of expenditure"
+    }
+  ],
+  "communes": [
+    {
+      "bfsNumber": 131,
+      "name": "Adliswil",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5198,
+          "components": {
+            "administration": 637,
+            "public_order": 157,
+            "education": 2372,
+            "social_security": 862,
+            "health": 548,
+            "transport": 307,
+            "environment": 41,
+            "culture": 274
+          }
+        },
+        "equity_per_capita": {
+          "value": 5988
+        },
+        "debt_per_capita": {
+          "value": 8726
+        },
+        "gross_debt_ratio": {
+          "value": 107.1
+        },
+        "investment_share": {
+          "value": 10.7
+        }
+      }
+    },
+    {
+      "bfsNumber": 241,
+      "name": "Aesch ZH",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5543,
+          "components": {
+            "administration": 840,
+            "public_order": 175,
+            "education": 3233,
+            "social_security": 329,
+            "health": 443,
+            "transport": 232,
+            "environment": 101,
+            "culture": 190
+          }
+        },
+        "equity_per_capita": {
+          "value": 11704
+        },
+        "debt_per_capita": {
+          "value": 11863
+        },
+        "gross_debt_ratio": {
+          "value": 130.1
+        },
+        "investment_share": {
+          "value": 13.6
+        }
+      }
+    },
+    {
+      "bfsNumber": 1,
+      "name": "Aeugst a.A.",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5175,
+          "components": {
+            "administration": 588,
+            "public_order": 265,
+            "education": 2815,
+            "social_security": 671,
+            "health": 435,
+            "transport": 213,
+            "environment": 101,
+            "culture": 87
+          }
+        },
+        "equity_per_capita": {
+          "value": 9746
+        },
+        "debt_per_capita": {
+          "value": 8215
+        },
+        "gross_debt_ratio": {
+          "value": 91.7
+        },
+        "investment_share": {
+          "value": 8.3
+        }
+      }
+    },
+    {
+      "bfsNumber": 2,
+      "name": "Affoltern a.A.",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5235,
+          "components": {
+            "administration": 503,
+            "public_order": 264,
+            "education": 2460,
+            "social_security": 825,
+            "health": 739,
+            "transport": 254,
+            "environment": 58,
+            "culture": 132
+          }
+        },
+        "equity_per_capita": {
+          "value": 4837
+        },
+        "debt_per_capita": {
+          "value": 8586
+        },
+        "gross_debt_ratio": {
+          "value": 82.7
+        },
+        "investment_share": {
+          "value": 8.1
+        }
+      }
+    },
+    {
+      "bfsNumber": 211,
+      "name": "Altikon",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4590,
+          "components": {
+            "administration": 942,
+            "public_order": 239,
+            "education": 2698,
+            "social_security": 279,
+            "health": 290,
+            "transport": 2,
+            "environment": 89,
+            "culture": 51
+          }
+        },
+        "equity_per_capita": {
+          "value": 7947
+        },
+        "debt_per_capita": {
+          "value": 4453
+        },
+        "gross_debt_ratio": {
+          "value": 50.1
+        },
+        "investment_share": {
+          "value": 20.4
+        }
+      }
+    },
+    {
+      "bfsNumber": 291,
+      "name": "Andelfingen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4479,
+          "components": {
+            "administration": 432,
+            "public_order": 214,
+            "education": 2543,
+            "social_security": 341,
+            "health": 532,
+            "transport": 211,
+            "environment": 30,
+            "culture": 176
+          }
+        },
+        "equity_per_capita": {
+          "value": 10990
+        },
+        "debt_per_capita": {
+          "value": 5364
+        },
+        "gross_debt_ratio": {
+          "value": 56.4
+        },
+        "investment_share": {
+          "value": 13.3
+        }
+      }
+    },
+    {
+      "bfsNumber": 51,
+      "name": "Bachenbülach",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5111,
+          "components": {
+            "administration": 557,
+            "public_order": 199,
+            "education": 2567,
+            "social_security": 869,
+            "health": 540,
+            "transport": 198,
+            "environment": 62,
+            "culture": 119
+          }
+        },
+        "equity_per_capita": {
+          "value": 13436
+        },
+        "debt_per_capita": {
+          "value": 4455
+        },
+        "gross_debt_ratio": {
+          "value": 57
+        },
+        "investment_share": {
+          "value": 24.4
+        }
+      }
+    },
+    {
+      "bfsNumber": 81,
+      "name": "Bachs",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4246,
+          "components": {
+            "administration": 754,
+            "public_order": 184,
+            "education": 3310,
+            "social_security": -758,
+            "health": 225,
+            "transport": 385,
+            "environment": 92,
+            "culture": 54
+          }
+        },
+        "equity_per_capita": {
+          "value": 9502
+        },
+        "debt_per_capita": {
+          "value": 14610
+        },
+        "gross_debt_ratio": {
+          "value": 124.1
+        },
+        "investment_share": {
+          "value": 7.4
+        }
+      }
+    },
+    {
+      "bfsNumber": 111,
+      "name": "Bäretswil",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4482,
+          "components": {
+            "administration": 402,
+            "public_order": 171,
+            "education": 2664,
+            "social_security": 362,
+            "health": 483,
+            "transport": 157,
+            "environment": 114,
+            "culture": 129
+          }
+        },
+        "equity_per_capita": {
+          "value": 5718
+        },
+        "debt_per_capita": {
+          "value": 3436
+        },
+        "gross_debt_ratio": {
+          "value": 42.5
+        },
+        "investment_share": {
+          "value": 10.5
+        }
+      }
+    },
+    {
+      "bfsNumber": 52,
+      "name": "Bassersdorf",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4690,
+          "components": {
+            "administration": 496,
+            "public_order": 177,
+            "education": 2477,
+            "social_security": 601,
+            "health": 503,
+            "transport": 240,
+            "environment": 49,
+            "culture": 147
+          }
+        },
+        "equity_per_capita": {
+          "value": 7690
+        },
+        "debt_per_capita": {
+          "value": 5003
+        },
+        "gross_debt_ratio": {
+          "value": 60.3
+        },
+        "investment_share": {
+          "value": 7.1
+        }
+      }
+    },
+    {
+      "bfsNumber": 297,
+      "name": "Bauma",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5940,
+          "components": {
+            "administration": 1195,
+            "public_order": 221,
+            "education": 2570,
+            "social_security": 649,
+            "health": 508,
+            "transport": 263,
+            "environment": 186,
+            "culture": 348
+          }
+        },
+        "equity_per_capita": {
+          "value": 4885
+        },
+        "debt_per_capita": {
+          "value": 5381
+        },
+        "gross_debt_ratio": {
+          "value": 45.7
+        },
+        "investment_share": {
+          "value": 12.7
+        }
+      }
+    },
+    {
+      "bfsNumber": 22,
+      "name": "Benken",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4901,
+          "components": {
+            "administration": 416,
+            "public_order": 212,
+            "education": 2976,
+            "social_security": 409,
+            "health": 521,
+            "transport": 136,
+            "environment": 164,
+            "culture": 67
+          }
+        },
+        "equity_per_capita": {
+          "value": 11376
+        },
+        "debt_per_capita": {
+          "value": 7235
+        },
+        "gross_debt_ratio": {
+          "value": 62.1
+        },
+        "investment_share": {
+          "value": 12.9
+        }
+      }
+    },
+    {
+      "bfsNumber": 23,
+      "name": "Berg a.I.",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 6457,
+          "components": {
+            "administration": 859,
+            "public_order": 269,
+            "education": 3712,
+            "social_security": 563,
+            "health": 556,
+            "transport": 303,
+            "environment": 72,
+            "culture": 123
+          }
+        },
+        "equity_per_capita": {
+          "value": 18179
+        },
+        "debt_per_capita": {
+          "value": 12012
+        },
+        "gross_debt_ratio": {
+          "value": 39.1
+        },
+        "investment_share": {
+          "value": 8.9
+        }
+      }
+    },
+    {
+      "bfsNumber": 242,
+      "name": "Birmensdorf",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4668,
+          "components": {
+            "administration": 507,
+            "public_order": 184,
+            "education": 2431,
+            "social_security": 601,
+            "health": 438,
+            "transport": 341,
+            "environment": 28,
+            "culture": 138
+          }
+        },
+        "equity_per_capita": {
+          "value": 8617
+        },
+        "debt_per_capita": {
+          "value": 4981
+        },
+        "gross_debt_ratio": {
+          "value": 57.2
+        },
+        "investment_share": {
+          "value": 12.8
+        }
+      }
+    },
+    {
+      "bfsNumber": 3,
+      "name": "Bonstetten",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4141,
+          "components": {
+            "administration": 460,
+            "public_order": 163,
+            "education": 2673,
+            "social_security": 237,
+            "health": 386,
+            "transport": -22,
+            "environment": 115,
+            "culture": 129
+          }
+        },
+        "equity_per_capita": {
+          "value": 11540
+        },
+        "debt_per_capita": {
+          "value": 2961
+        },
+        "gross_debt_ratio": {
+          "value": 36.4
+        },
+        "investment_share": {
+          "value": 21.5
+        }
+      }
+    },
+    {
+      "bfsNumber": 82,
+      "name": "Boppelsen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5184,
+          "components": {
+            "administration": 681,
+            "public_order": 234,
+            "education": 3243,
+            "social_security": 409,
+            "health": 308,
+            "transport": 153,
+            "environment": 78,
+            "culture": 78
+          }
+        },
+        "equity_per_capita": {
+          "value": 15301
+        },
+        "debt_per_capita": {
+          "value": 5011
+        },
+        "gross_debt_ratio": {
+          "value": 61.6
+        },
+        "investment_share": {
+          "value": 7.9
+        }
+      }
+    },
+    {
+      "bfsNumber": 213,
+      "name": "Brütten",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4022,
+          "components": {
+            "administration": 530,
+            "public_order": 172,
+            "education": 2181,
+            "social_security": 359,
+            "health": 226,
+            "transport": 302,
+            "environment": 106,
+            "culture": 146
+          }
+        },
+        "equity_per_capita": {
+          "value": 14167
+        },
+        "debt_per_capita": {
+          "value": 3129
+        },
+        "gross_debt_ratio": {
+          "value": 44.5
+        },
+        "investment_share": {
+          "value": 20.9
+        }
+      }
+    },
+    {
+      "bfsNumber": 112,
+      "name": "Bubikon",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4619,
+          "components": {
+            "administration": 387,
+            "public_order": 211,
+            "education": 2527,
+            "social_security": 397,
+            "health": 577,
+            "transport": 326,
+            "environment": 80,
+            "culture": 114
+          }
+        },
+        "equity_per_capita": {
+          "value": 6324
+        },
+        "debt_per_capita": {
+          "value": 3841
+        },
+        "gross_debt_ratio": {
+          "value": 41.6
+        },
+        "investment_share": {
+          "value": 8.1
+        }
+      }
+    },
+    {
+      "bfsNumber": 24,
+      "name": "Buch a.I.",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4348,
+          "components": {
+            "administration": 509,
+            "public_order": 165,
+            "education": 2499,
+            "social_security": 311,
+            "health": 477,
+            "transport": 160,
+            "environment": 61,
+            "culture": 166
+          }
+        },
+        "equity_per_capita": {
+          "value": 13303
+        },
+        "debt_per_capita": {
+          "value": 7383
+        },
+        "gross_debt_ratio": {
+          "value": 74.6
+        },
+        "investment_share": {
+          "value": 10.2
+        }
+      }
+    },
+    {
+      "bfsNumber": 83,
+      "name": "Buchs",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4371,
+          "components": {
+            "administration": 481,
+            "public_order": 159,
+            "education": 2477,
+            "social_security": 553,
+            "health": 395,
+            "transport": 196,
+            "environment": 32,
+            "culture": 78
+          }
+        },
+        "equity_per_capita": {
+          "value": 11151
+        },
+        "debt_per_capita": {
+          "value": 2741
+        },
+        "gross_debt_ratio": {
+          "value": 36.5
+        },
+        "investment_share": {
+          "value": 8.9
+        }
+      }
+    },
+    {
+      "bfsNumber": 53,
+      "name": "Bülach",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4649,
+          "components": {
+            "administration": 480,
+            "public_order": 244,
+            "education": 2425,
+            "social_security": 630,
+            "health": 437,
+            "transport": 170,
+            "environment": 61,
+            "culture": 202
+          }
+        },
+        "equity_per_capita": {
+          "value": 10817
+        },
+        "debt_per_capita": {
+          "value": 7011
+        },
+        "gross_debt_ratio": {
+          "value": 69.3
+        },
+        "investment_share": {
+          "value": 15.8
+        }
+      }
+    },
+    {
+      "bfsNumber": 25,
+      "name": "Dachsen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4731,
+          "components": {
+            "administration": 347,
+            "public_order": 210,
+            "education": 2611,
+            "social_security": 583,
+            "health": 595,
+            "transport": 200,
+            "environment": 34,
+            "culture": 151
+          }
+        },
+        "equity_per_capita": {
+          "value": 10240
+        },
+        "debt_per_capita": {
+          "value": 5338
+        },
+        "gross_debt_ratio": {
+          "value": 61.1
+        },
+        "investment_share": {
+          "value": 6.6
+        }
+      }
+    },
+    {
+      "bfsNumber": 214,
+      "name": "Dägerlen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4275,
+          "components": {
+            "administration": 540,
+            "public_order": 196,
+            "education": 2693,
+            "social_security": 326,
+            "health": 282,
+            "transport": 130,
+            "environment": 50,
+            "culture": 58
+          }
+        },
+        "equity_per_capita": {
+          "value": 9294
+        },
+        "debt_per_capita": {
+          "value": 3762
+        },
+        "gross_debt_ratio": {
+          "value": 44.8
+        },
+        "investment_share": {
+          "value": 12
+        }
+      }
+    },
+    {
+      "bfsNumber": 84,
+      "name": "Dällikon",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4942,
+          "components": {
+            "administration": 586,
+            "public_order": 178,
+            "education": 2822,
+            "social_security": 595,
+            "health": 437,
+            "transport": 102,
+            "environment": 37,
+            "culture": 185
+          }
+        },
+        "equity_per_capita": {
+          "value": 14279
+        },
+        "debt_per_capita": {
+          "value": 3532
+        },
+        "gross_debt_ratio": {
+          "value": 46.1
+        },
+        "investment_share": {
+          "value": 5.4
+        }
+      }
+    },
+    {
+      "bfsNumber": 85,
+      "name": "Dänikon",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5540,
+          "components": {
+            "administration": 576,
+            "public_order": 270,
+            "education": 3426,
+            "social_security": 469,
+            "health": 402,
+            "transport": 219,
+            "environment": 77,
+            "culture": 101
+          }
+        },
+        "equity_per_capita": {
+          "value": 14186
+        },
+        "debt_per_capita": {
+          "value": 10460
+        },
+        "gross_debt_ratio": {
+          "value": 94.6
+        },
+        "investment_share": {
+          "value": 18.3
+        }
+      }
+    },
+    {
+      "bfsNumber": 215,
+      "name": "Dättlikon",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5165,
+          "components": {
+            "administration": 901,
+            "public_order": 215,
+            "education": 3093,
+            "social_security": 388,
+            "health": 289,
+            "transport": 87,
+            "environment": 94,
+            "culture": 98
+          }
+        },
+        "equity_per_capita": {
+          "value": 8134
+        },
+        "debt_per_capita": {
+          "value": 6583
+        },
+        "gross_debt_ratio": {
+          "value": 80.9
+        },
+        "investment_share": {
+          "value": 6.3
+        }
+      }
+    },
+    {
+      "bfsNumber": 86,
+      "name": "Dielsdorf",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4115,
+          "components": {
+            "administration": 288,
+            "public_order": 232,
+            "education": 2167,
+            "social_security": 323,
+            "health": 589,
+            "transport": 171,
+            "environment": 121,
+            "culture": 224
+          }
+        },
+        "equity_per_capita": {
+          "value": 6011
+        },
+        "debt_per_capita": {
+          "value": 5508
+        },
+        "gross_debt_ratio": {
+          "value": 71.1
+        },
+        "investment_share": {
+          "value": 7.8
+        }
+      }
+    },
+    {
+      "bfsNumber": 243,
+      "name": "Dietikon",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5640,
+          "components": {
+            "administration": 589,
+            "public_order": 211,
+            "education": 2565,
+            "social_security": 1126,
+            "health": 631,
+            "transport": 202,
+            "environment": 104,
+            "culture": 212
+          }
+        },
+        "equity_per_capita": {
+          "value": 4543
+        },
+        "debt_per_capita": {
+          "value": 8443
+        },
+        "gross_debt_ratio": {
+          "value": 79.6
+        },
+        "investment_share": {
+          "value": 11.1
+        }
+      }
+    },
+    {
+      "bfsNumber": 54,
+      "name": "Dietlikon",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4879,
+          "components": {
+            "administration": 429,
+            "public_order": 174,
+            "education": 2590,
+            "social_security": 556,
+            "health": 537,
+            "transport": 279,
+            "environment": 54,
+            "culture": 260
+          }
+        },
+        "equity_per_capita": {
+          "value": 11377
+        },
+        "debt_per_capita": {
+          "value": 9476
+        },
+        "gross_debt_ratio": {
+          "value": 79
+        },
+        "investment_share": {
+          "value": 11.3
+        }
+      }
+    },
+    {
+      "bfsNumber": 216,
+      "name": "Dinhard",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 3820,
+          "components": {
+            "administration": 294,
+            "public_order": 176,
+            "education": 2395,
+            "social_security": 335,
+            "health": 332,
+            "transport": 130,
+            "environment": 75,
+            "culture": 83
+          }
+        },
+        "equity_per_capita": {
+          "value": 9723
+        },
+        "debt_per_capita": {
+          "value": 1954
+        },
+        "gross_debt_ratio": {
+          "value": 22.5
+        },
+        "investment_share": {
+          "value": 12.8
+        }
+      }
+    },
+    {
+      "bfsNumber": 26,
+      "name": "Dorf",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4294,
+          "components": {
+            "administration": 688,
+            "public_order": 137,
+            "education": 2499,
+            "social_security": 37,
+            "health": 428,
+            "transport": 227,
+            "environment": 129,
+            "culture": 149
+          }
+        },
+        "equity_per_capita": {
+          "value": 12247
+        },
+        "debt_per_capita": {
+          "value": 2554
+        },
+        "gross_debt_ratio": {
+          "value": 22.8
+        },
+        "investment_share": {
+          "value": 14.4
+        }
+      }
+    },
+    {
+      "bfsNumber": 191,
+      "name": "Dübendorf",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5085,
+          "components": {
+            "administration": 414,
+            "public_order": 242,
+            "education": 2850,
+            "social_security": 696,
+            "health": 375,
+            "transport": 283,
+            "environment": 52,
+            "culture": 173
+          }
+        },
+        "equity_per_capita": {
+          "value": 9550
+        },
+        "debt_per_capita": {
+          "value": 4565
+        },
+        "gross_debt_ratio": {
+          "value": 51.3
+        },
+        "investment_share": {
+          "value": 15.5
+        }
+      }
+    },
+    {
+      "bfsNumber": 113,
+      "name": "Dürnten",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5017,
+          "components": {
+            "administration": 435,
+            "public_order": 179,
+            "education": 2758,
+            "social_security": 615,
+            "health": 519,
+            "transport": 293,
+            "environment": 94,
+            "culture": 124
+          }
+        },
+        "equity_per_capita": {
+          "value": 10661
+        },
+        "debt_per_capita": {
+          "value": 2096
+        },
+        "gross_debt_ratio": {
+          "value": 21
+        },
+        "investment_share": {
+          "value": 18.5
+        }
+      }
+    },
+    {
+      "bfsNumber": 192,
+      "name": "Egg",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4930,
+          "components": {
+            "administration": 359,
+            "public_order": 208,
+            "education": 2500,
+            "social_security": 686,
+            "health": 587,
+            "transport": 371,
+            "environment": 127,
+            "culture": 92
+          }
+        },
+        "equity_per_capita": {
+          "value": 5848
+        },
+        "debt_per_capita": {
+          "value": 5154
+        },
+        "gross_debt_ratio": {
+          "value": 71.2
+        },
+        "investment_share": {
+          "value": 12.5
+        }
+      }
+    },
+    {
+      "bfsNumber": 55,
+      "name": "Eglisau",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4678,
+          "components": {
+            "administration": 421,
+            "public_order": 127,
+            "education": 2681,
+            "social_security": 527,
+            "health": 410,
+            "transport": 283,
+            "environment": 58,
+            "culture": 171
+          }
+        },
+        "equity_per_capita": {
+          "value": 10996
+        },
+        "debt_per_capita": {
+          "value": 3598
+        },
+        "gross_debt_ratio": {
+          "value": 35.4
+        },
+        "investment_share": {
+          "value": 27.1
+        }
+      }
+    },
+    {
+      "bfsNumber": 294,
+      "name": "Elgg",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4935,
+          "components": {
+            "administration": 463,
+            "public_order": 261,
+            "education": 2626,
+            "social_security": 612,
+            "health": 463,
+            "transport": 218,
+            "environment": 112,
+            "culture": 180
+          }
+        },
+        "equity_per_capita": {
+          "value": 12258
+        },
+        "debt_per_capita": {
+          "value": 2968
+        },
+        "gross_debt_ratio": {
+          "value": 29.5
+        },
+        "investment_share": {
+          "value": 10.5
+        }
+      }
+    },
+    {
+      "bfsNumber": 218,
+      "name": "Ellikon a.d.Th.",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4887,
+          "components": {
+            "administration": 751,
+            "public_order": 259,
+            "education": 2822,
+            "social_security": 366,
+            "health": 288,
+            "transport": 148,
+            "environment": 71,
+            "culture": 182
+          }
+        },
+        "equity_per_capita": {
+          "value": 9746
+        },
+        "debt_per_capita": {
+          "value": 10552
+        },
+        "gross_debt_ratio": {
+          "value": 96.7
+        },
+        "investment_share": {
+          "value": 8.7
+        }
+      }
+    },
+    {
+      "bfsNumber": 219,
+      "name": "Elsau",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4784,
+          "components": {
+            "administration": 328,
+            "public_order": 181,
+            "education": 2865,
+            "social_security": 256,
+            "health": 541,
+            "transport": 353,
+            "environment": 73,
+            "culture": 187
+          }
+        },
+        "equity_per_capita": {
+          "value": 9078
+        },
+        "debt_per_capita": {
+          "value": 4770
+        },
+        "gross_debt_ratio": {
+          "value": 47.7
+        },
+        "investment_share": {
+          "value": 16.1
+        }
+      }
+    },
+    {
+      "bfsNumber": 56,
+      "name": "Embrach",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4179,
+          "components": {
+            "administration": 380,
+            "public_order": 177,
+            "education": 2382,
+            "social_security": 338,
+            "health": 472,
+            "transport": 178,
+            "environment": 52,
+            "culture": 200
+          }
+        },
+        "equity_per_capita": {
+          "value": 9515
+        },
+        "debt_per_capita": {
+          "value": 4937
+        },
+        "gross_debt_ratio": {
+          "value": 52.7
+        },
+        "investment_share": {
+          "value": 11.1
+        }
+      }
+    },
+    {
+      "bfsNumber": 151,
+      "name": "Erlenbach",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 6058,
+          "components": {
+            "administration": 1053,
+            "public_order": 286,
+            "education": 2642,
+            "social_security": 685,
+            "health": 500,
+            "transport": 480,
+            "environment": 117,
+            "culture": 295
+          }
+        },
+        "equity_per_capita": {
+          "value": 27142
+        },
+        "debt_per_capita": {
+          "value": 26230
+        },
+        "gross_debt_ratio": {
+          "value": 28.7
+        },
+        "investment_share": {
+          "value": 3.2
+        }
+      }
+    },
+    {
+      "bfsNumber": 193,
+      "name": "Fällanden",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4675,
+          "components": {
+            "administration": 525,
+            "public_order": 276,
+            "education": 2370,
+            "social_security": 699,
+            "health": 414,
+            "transport": 283,
+            "environment": 41,
+            "culture": 67
+          }
+        },
+        "equity_per_capita": {
+          "value": 8902
+        },
+        "debt_per_capita": {
+          "value": 2693
+        },
+        "gross_debt_ratio": {
+          "value": 27.5
+        },
+        "investment_share": {
+          "value": 7.2
+        }
+      }
+    },
+    {
+      "bfsNumber": 172,
+      "name": "Fehraltorf",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4717,
+          "components": {
+            "administration": 503,
+            "public_order": 235,
+            "education": 2633,
+            "social_security": 546,
+            "health": 387,
+            "transport": 237,
+            "environment": 78,
+            "culture": 98
+          }
+        },
+        "equity_per_capita": {
+          "value": 6520
+        },
+        "debt_per_capita": {
+          "value": 6936
+        },
+        "gross_debt_ratio": {
+          "value": 71.1
+        },
+        "investment_share": {
+          "value": 27.3
+        }
+      }
+    },
+    {
+      "bfsNumber": 27,
+      "name": "Feuerthalen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4656,
+          "components": {
+            "administration": 369,
+            "public_order": 125,
+            "education": 2642,
+            "social_security": 533,
+            "health": 561,
+            "transport": 262,
+            "environment": 109,
+            "culture": 55
+          }
+        },
+        "equity_per_capita": {
+          "value": 7546
+        },
+        "debt_per_capita": {
+          "value": 3884
+        },
+        "gross_debt_ratio": {
+          "value": 49.3
+        },
+        "investment_share": {
+          "value": 12.2
+        }
+      }
+    },
+    {
+      "bfsNumber": 114,
+      "name": "Fischenthal",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 6006,
+          "components": {
+            "administration": 980,
+            "public_order": 252,
+            "education": 3116,
+            "social_security": 588,
+            "health": 418,
+            "transport": 344,
+            "environment": 157,
+            "culture": 151
+          }
+        },
+        "equity_per_capita": {
+          "value": 8262
+        },
+        "debt_per_capita": {
+          "value": 3726
+        },
+        "gross_debt_ratio": {
+          "value": 30.1
+        },
+        "investment_share": {
+          "value": 5.5
+        }
+      }
+    },
+    {
+      "bfsNumber": 28,
+      "name": "Flaach",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4693,
+          "components": {
+            "administration": 506,
+            "public_order": 184,
+            "education": 2499,
+            "social_security": 439,
+            "health": 563,
+            "transport": 171,
+            "environment": 93,
+            "culture": 238
+          }
+        },
+        "equity_per_capita": {
+          "value": 11784
+        },
+        "debt_per_capita": {
+          "value": 4211
+        },
+        "gross_debt_ratio": {
+          "value": 22
+        },
+        "investment_share": {
+          "value": 9.2
+        }
+      }
+    },
+    {
+      "bfsNumber": 29,
+      "name": "Flurlingen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4657,
+          "components": {
+            "administration": 320,
+            "public_order": 201,
+            "education": 2647,
+            "social_security": 362,
+            "health": 681,
+            "transport": 254,
+            "environment": 83,
+            "culture": 109
+          }
+        },
+        "equity_per_capita": {
+          "value": 10483
+        },
+        "debt_per_capita": {
+          "value": 5280
+        },
+        "gross_debt_ratio": {
+          "value": 67.3
+        },
+        "investment_share": {
+          "value": 9.9
+        }
+      }
+    },
+    {
+      "bfsNumber": 57,
+      "name": "Freienstein-Teufen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4667,
+          "components": {
+            "administration": 420,
+            "public_order": 194,
+            "education": 2673,
+            "social_security": 503,
+            "health": 419,
+            "transport": 298,
+            "environment": 46,
+            "culture": 114
+          }
+        },
+        "equity_per_capita": {
+          "value": 8820
+        },
+        "debt_per_capita": {
+          "value": 4829
+        },
+        "gross_debt_ratio": {
+          "value": 39.6
+        },
+        "investment_share": {
+          "value": 9.4
+        }
+      }
+    },
+    {
+      "bfsNumber": 244,
+      "name": "Geroldswil",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5096,
+          "components": {
+            "administration": 437,
+            "public_order": 250,
+            "education": 2561,
+            "social_security": 912,
+            "health": 480,
+            "transport": 197,
+            "environment": 42,
+            "culture": 217
+          }
+        },
+        "equity_per_capita": {
+          "value": 4631
+        },
+        "debt_per_capita": {
+          "value": 19756
+        },
+        "gross_debt_ratio": {
+          "value": 210.5
+        },
+        "investment_share": {
+          "value": 12.1
+        }
+      }
+    },
+    {
+      "bfsNumber": 58,
+      "name": "Glattfelden",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4923,
+          "components": {
+            "administration": 347,
+            "public_order": 223,
+            "education": 2567,
+            "social_security": 706,
+            "health": 411,
+            "transport": 393,
+            "environment": 69,
+            "culture": 207
+          }
+        },
+        "equity_per_capita": {
+          "value": 10104
+        },
+        "debt_per_capita": {
+          "value": 3424
+        },
+        "gross_debt_ratio": {
+          "value": 38.5
+        },
+        "investment_share": {
+          "value": 10.9
+        }
+      }
+    },
+    {
+      "bfsNumber": 115,
+      "name": "Gossau",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5207,
+          "components": {
+            "administration": 1240,
+            "public_order": 223,
+            "education": 2337,
+            "social_security": 387,
+            "health": 572,
+            "transport": 250,
+            "environment": 87,
+            "culture": 111
+          }
+        },
+        "equity_per_capita": {
+          "value": 8582
+        },
+        "debt_per_capita": {
+          "value": 4104
+        },
+        "gross_debt_ratio": {
+          "value": 52.8
+        },
+        "investment_share": {
+          "value": 12.8
+        }
+      }
+    },
+    {
+      "bfsNumber": 194,
+      "name": "Greifensee",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4830,
+          "components": {
+            "administration": 387,
+            "public_order": 262,
+            "education": 2720,
+            "social_security": 638,
+            "health": 473,
+            "transport": 133,
+            "environment": 55,
+            "culture": 162
+          }
+        },
+        "equity_per_capita": {
+          "value": 8514
+        },
+        "debt_per_capita": {
+          "value": 6538
+        },
+        "gross_debt_ratio": {
+          "value": 51.7
+        },
+        "investment_share": {
+          "value": 9.6
+        }
+      }
+    },
+    {
+      "bfsNumber": 116,
+      "name": "Grüningen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4979,
+          "components": {
+            "administration": 460,
+            "public_order": 188,
+            "education": 2976,
+            "social_security": 503,
+            "health": 513,
+            "transport": 158,
+            "environment": 74,
+            "culture": 107
+          }
+        },
+        "equity_per_capita": {
+          "value": 5921
+        },
+        "debt_per_capita": {
+          "value": 5501
+        },
+        "gross_debt_ratio": {
+          "value": 70.3
+        },
+        "investment_share": {
+          "value": 4.6
+        }
+      }
+    },
+    {
+      "bfsNumber": 220,
+      "name": "Hagenbuch",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4954,
+          "components": {
+            "administration": 742,
+            "public_order": 260,
+            "education": 2914,
+            "social_security": 444,
+            "health": 222,
+            "transport": 214,
+            "environment": 97,
+            "culture": 61
+          }
+        },
+        "equity_per_capita": {
+          "value": 9038
+        },
+        "debt_per_capita": {
+          "value": 2361
+        },
+        "gross_debt_ratio": {
+          "value": 26.1
+        },
+        "investment_share": {
+          "value": 16.3
+        }
+      }
+    },
+    {
+      "bfsNumber": 4,
+      "name": "Hausen a.A.",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4490,
+          "components": {
+            "administration": 368,
+            "public_order": 238,
+            "education": 2539,
+            "social_security": 566,
+            "health": 378,
+            "transport": 158,
+            "environment": 125,
+            "culture": 118
+          }
+        },
+        "equity_per_capita": {
+          "value": 14930
+        },
+        "debt_per_capita": {
+          "value": 3830
+        },
+        "gross_debt_ratio": {
+          "value": 35.2
+        },
+        "investment_share": {
+          "value": 25.9
+        }
+      }
+    },
+    {
+      "bfsNumber": 5,
+      "name": "Hedingen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4835,
+          "components": {
+            "administration": 577,
+            "public_order": 197,
+            "education": 2381,
+            "social_security": 709,
+            "health": 339,
+            "transport": 246,
+            "environment": 206,
+            "culture": 180
+          }
+        },
+        "equity_per_capita": {
+          "value": 12283
+        },
+        "debt_per_capita": {
+          "value": 2752
+        },
+        "gross_debt_ratio": {
+          "value": 39.1
+        },
+        "investment_share": {
+          "value": 8.4
+        }
+      }
+    },
+    {
+      "bfsNumber": 31,
+      "name": "Henggart",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4645,
+          "components": {
+            "administration": 733,
+            "public_order": 134,
+            "education": 2599,
+            "social_security": 257,
+            "health": 605,
+            "transport": 175,
+            "environment": 77,
+            "culture": 65
+          }
+        },
+        "equity_per_capita": {
+          "value": 8263
+        },
+        "debt_per_capita": {
+          "value": 1619
+        },
+        "gross_debt_ratio": {
+          "value": 20
+        },
+        "investment_share": {
+          "value": 15.4
+        }
+      }
+    },
+    {
+      "bfsNumber": 152,
+      "name": "Herrliberg",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5583,
+          "components": {
+            "administration": 797,
+            "public_order": 242,
+            "education": 2667,
+            "social_security": 503,
+            "health": 475,
+            "transport": 428,
+            "environment": 191,
+            "culture": 280
+          }
+        },
+        "equity_per_capita": {
+          "value": 16027
+        },
+        "debt_per_capita": {
+          "value": 22743
+        },
+        "gross_debt_ratio": {
+          "value": 65.8
+        },
+        "investment_share": {
+          "value": 7.3
+        }
+      }
+    },
+    {
+      "bfsNumber": 221,
+      "name": "Hettlingen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4516,
+          "components": {
+            "administration": 428,
+            "public_order": 150,
+            "education": 2591,
+            "social_security": 322,
+            "health": 536,
+            "transport": 224,
+            "environment": 78,
+            "culture": 187
+          }
+        },
+        "equity_per_capita": {
+          "value": 6293
+        },
+        "debt_per_capita": {
+          "value": 2748
+        },
+        "gross_debt_ratio": {
+          "value": 39.5
+        },
+        "investment_share": {
+          "value": 16.6
+        }
+      }
+    },
+    {
+      "bfsNumber": 117,
+      "name": "Hinwil",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4641,
+          "components": {
+            "administration": 262,
+            "public_order": 202,
+            "education": 2615,
+            "social_security": 499,
+            "health": 499,
+            "transport": 300,
+            "environment": 109,
+            "culture": 155
+          }
+        },
+        "equity_per_capita": {
+          "value": 5039
+        },
+        "debt_per_capita": {
+          "value": 9361
+        },
+        "gross_debt_ratio": {
+          "value": 114.9
+        },
+        "investment_share": {
+          "value": 7.1
+        }
+      }
+    },
+    {
+      "bfsNumber": 173,
+      "name": "Hittnau",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4522,
+          "components": {
+            "administration": 655,
+            "public_order": 178,
+            "education": 2599,
+            "social_security": 318,
+            "health": 369,
+            "transport": 217,
+            "environment": 121,
+            "culture": 65
+          }
+        },
+        "equity_per_capita": {
+          "value": 9104
+        },
+        "debt_per_capita": {
+          "value": 6508
+        },
+        "gross_debt_ratio": {
+          "value": 64.2
+        },
+        "investment_share": {
+          "value": 12
+        }
+      }
+    },
+    {
+      "bfsNumber": 59,
+      "name": "Hochfelden",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4628,
+          "components": {
+            "administration": 538,
+            "public_order": 226,
+            "education": 2804,
+            "social_security": 444,
+            "health": 313,
+            "transport": 168,
+            "environment": 52,
+            "culture": 83
+          }
+        },
+        "equity_per_capita": {
+          "value": 10778
+        },
+        "debt_per_capita": {
+          "value": 4037
+        },
+        "gross_debt_ratio": {
+          "value": 49.9
+        },
+        "investment_share": {
+          "value": 5.4
+        }
+      }
+    },
+    {
+      "bfsNumber": 153,
+      "name": "Hombrechtikon",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4884,
+          "components": {
+            "administration": 521,
+            "public_order": 245,
+            "education": 2375,
+            "social_security": 728,
+            "health": 541,
+            "transport": 326,
+            "environment": 89,
+            "culture": 59
+          }
+        },
+        "equity_per_capita": {
+          "value": 9261
+        },
+        "debt_per_capita": {
+          "value": 3515
+        },
+        "gross_debt_ratio": {
+          "value": 42.4
+        },
+        "investment_share": {
+          "value": 15.5
+        }
+      }
+    },
+    {
+      "bfsNumber": 295,
+      "name": "Horgen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5166,
+          "components": {
+            "administration": 454,
+            "public_order": 239,
+            "education": 2413,
+            "social_security": 985,
+            "health": 500,
+            "transport": 316,
+            "environment": 73,
+            "culture": 186
+          }
+        },
+        "equity_per_capita": {
+          "value": 4455
+        },
+        "debt_per_capita": {
+          "value": 8469
+        },
+        "gross_debt_ratio": {
+          "value": 65.3
+        },
+        "investment_share": {
+          "value": 9.1
+        }
+      }
+    },
+    {
+      "bfsNumber": 60,
+      "name": "Höri",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4798,
+          "components": {
+            "administration": 620,
+            "public_order": 233,
+            "education": 2639,
+            "social_security": 685,
+            "health": 404,
+            "transport": 102,
+            "environment": 58,
+            "culture": 57
+          }
+        },
+        "equity_per_capita": {
+          "value": 8432
+        },
+        "debt_per_capita": {
+          "value": 5084
+        },
+        "gross_debt_ratio": {
+          "value": 34.3
+        },
+        "investment_share": {
+          "value": 5.1
+        }
+      }
+    },
+    {
+      "bfsNumber": 61,
+      "name": "Hüntwangen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4807,
+          "components": {
+            "administration": 671,
+            "public_order": 222,
+            "education": 2642,
+            "social_security": 501,
+            "health": 453,
+            "transport": 163,
+            "environment": 73,
+            "culture": 82
+          }
+        },
+        "equity_per_capita": {
+          "value": 10764
+        },
+        "debt_per_capita": {
+          "value": 5191
+        },
+        "gross_debt_ratio": {
+          "value": 52.1
+        },
+        "investment_share": {
+          "value": 10.1
+        }
+      }
+    },
+    {
+      "bfsNumber": 87,
+      "name": "Hüttikon",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5625,
+          "components": {
+            "administration": 839,
+            "public_order": 221,
+            "education": 3425,
+            "social_security": 434,
+            "health": 455,
+            "transport": 175,
+            "environment": 42,
+            "culture": 34
+          }
+        },
+        "equity_per_capita": {
+          "value": 10170
+        },
+        "debt_per_capita": {
+          "value": 8748
+        },
+        "gross_debt_ratio": {
+          "value": 101.6
+        },
+        "investment_share": {
+          "value": 18.3
+        }
+      }
+    },
+    {
+      "bfsNumber": 296,
+      "name": "Illnau-Effretikon",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4667,
+          "components": {
+            "administration": 332,
+            "public_order": 153,
+            "education": 2383,
+            "social_security": 705,
+            "health": 554,
+            "transport": 247,
+            "environment": 118,
+            "culture": 175
+          }
+        },
+        "equity_per_capita": {
+          "value": 6220
+        },
+        "debt_per_capita": {
+          "value": 6527
+        },
+        "gross_debt_ratio": {
+          "value": 79.5
+        },
+        "investment_share": {
+          "value": 15.6
+        }
+      }
+    },
+    {
+      "bfsNumber": 6,
+      "name": "Kappel a.A.",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5031,
+          "components": {
+            "administration": 820,
+            "public_order": 243,
+            "education": 2900,
+            "social_security": 549,
+            "health": 329,
+            "transport": 85,
+            "environment": 33,
+            "culture": 72
+          }
+        },
+        "equity_per_capita": {
+          "value": 10753
+        },
+        "debt_per_capita": {
+          "value": 2366
+        },
+        "gross_debt_ratio": {
+          "value": 28.6
+        },
+        "investment_share": {
+          "value": 3.2
+        }
+      }
+    },
+    {
+      "bfsNumber": 135,
+      "name": "Kilchberg",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5044,
+          "components": {
+            "administration": 670,
+            "public_order": 214,
+            "education": 2281,
+            "social_security": 670,
+            "health": 494,
+            "transport": 349,
+            "environment": 130,
+            "culture": 236
+          }
+        },
+        "equity_per_capita": {
+          "value": 5701
+        },
+        "debt_per_capita": {
+          "value": 18814
+        },
+        "gross_debt_ratio": {
+          "value": 45.3
+        },
+        "investment_share": {
+          "value": 6.2
+        }
+      }
+    },
+    {
+      "bfsNumber": 33,
+      "name": "Kleinandelfingen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4692,
+          "components": {
+            "administration": 484,
+            "public_order": 235,
+            "education": 2544,
+            "social_security": 442,
+            "health": 585,
+            "transport": 114,
+            "environment": 76,
+            "culture": 212
+          }
+        },
+        "equity_per_capita": {
+          "value": 11459
+        },
+        "debt_per_capita": {
+          "value": 3429
+        },
+        "gross_debt_ratio": {
+          "value": 40.2
+        },
+        "investment_share": {
+          "value": 12.2
+        }
+      }
+    },
+    {
+      "bfsNumber": 62,
+      "name": "Kloten",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5049,
+          "components": {
+            "administration": 467,
+            "public_order": 215,
+            "education": 1913,
+            "social_security": 942,
+            "health": 628,
+            "transport": 301,
+            "environment": 161,
+            "culture": 422
+          }
+        },
+        "equity_per_capita": {
+          "value": 15253
+        },
+        "debt_per_capita": {
+          "value": 6164
+        },
+        "gross_debt_ratio": {
+          "value": 18.7
+        },
+        "investment_share": {
+          "value": 16.4
+        }
+      }
+    },
+    {
+      "bfsNumber": 7,
+      "name": "Knonau",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4975,
+          "components": {
+            "administration": 505,
+            "public_order": 190,
+            "education": 2998,
+            "social_security": 583,
+            "health": 321,
+            "transport": 185,
+            "environment": 63,
+            "culture": 130
+          }
+        },
+        "equity_per_capita": {
+          "value": 10661
+        },
+        "debt_per_capita": {
+          "value": 3242
+        },
+        "gross_debt_ratio": {
+          "value": 32.6
+        },
+        "investment_share": {
+          "value": 6.5
+        }
+      }
+    },
+    {
+      "bfsNumber": 154,
+      "name": "Küsnacht",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 6002,
+          "components": {
+            "administration": 459,
+            "public_order": 264,
+            "education": 2810,
+            "social_security": 671,
+            "health": 662,
+            "transport": 564,
+            "environment": 153,
+            "culture": 419
+          }
+        },
+        "equity_per_capita": {
+          "value": 13155
+        },
+        "debt_per_capita": {
+          "value": 22972
+        },
+        "gross_debt_ratio": {
+          "value": 43.2
+        },
+        "investment_share": {
+          "value": 23.1
+        }
+      }
+    },
+    {
+      "bfsNumber": 136,
+      "name": "Langnau a.A.",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4341,
+          "components": {
+            "administration": 409,
+            "public_order": 200,
+            "education": 2331,
+            "social_security": 161,
+            "health": 629,
+            "transport": 295,
+            "environment": 100,
+            "culture": 216
+          }
+        },
+        "equity_per_capita": {
+          "value": 6913
+        },
+        "debt_per_capita": {
+          "value": 4414
+        },
+        "gross_debt_ratio": {
+          "value": 53.6
+        },
+        "investment_share": {
+          "value": 12.3
+        }
+      }
+    },
+    {
+      "bfsNumber": 34,
+      "name": "Laufen-Uhwiesen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4516,
+          "components": {
+            "administration": 469,
+            "public_order": 241,
+            "education": 2421,
+            "social_security": 545,
+            "health": 492,
+            "transport": 146,
+            "environment": 142,
+            "culture": 60
+          }
+        },
+        "equity_per_capita": {
+          "value": 15096
+        },
+        "debt_per_capita": {
+          "value": 5241
+        },
+        "gross_debt_ratio": {
+          "value": 69.3
+        },
+        "investment_share": {
+          "value": 9.8
+        }
+      }
+    },
+    {
+      "bfsNumber": 176,
+      "name": "Lindau",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5268,
+          "components": {
+            "administration": 809,
+            "public_order": 137,
+            "education": 2565,
+            "social_security": 757,
+            "health": 444,
+            "transport": 302,
+            "environment": 75,
+            "culture": 179
+          }
+        },
+        "equity_per_capita": {
+          "value": 10934
+        },
+        "debt_per_capita": {
+          "value": 2432
+        },
+        "gross_debt_ratio": {
+          "value": 35.5
+        },
+        "investment_share": {
+          "value": 11.9
+        }
+      }
+    },
+    {
+      "bfsNumber": 63,
+      "name": "Lufingen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4140,
+          "components": {
+            "administration": 390,
+            "public_order": 130,
+            "education": 2786,
+            "social_security": 297,
+            "health": 283,
+            "transport": 166,
+            "environment": 63,
+            "culture": 25
+          }
+        },
+        "equity_per_capita": {
+          "value": 5442
+        },
+        "debt_per_capita": {
+          "value": 6896
+        },
+        "gross_debt_ratio": {
+          "value": 109.9
+        },
+        "investment_share": {
+          "value": 11.7
+        }
+      }
+    },
+    {
+      "bfsNumber": 155,
+      "name": "Männedorf",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5080,
+          "components": {
+            "administration": 623,
+            "public_order": 233,
+            "education": 2468,
+            "social_security": 504,
+            "health": 671,
+            "transport": 263,
+            "environment": 142,
+            "culture": 176
+          }
+        },
+        "equity_per_capita": {
+          "value": 11121
+        },
+        "debt_per_capita": {
+          "value": 6817
+        },
+        "gross_debt_ratio": {
+          "value": 48.7
+        },
+        "investment_share": {
+          "value": 5.4
+        }
+      }
+    },
+    {
+      "bfsNumber": 35,
+      "name": "Marthalen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4635,
+          "components": {
+            "administration": 526,
+            "public_order": 216,
+            "education": 2405,
+            "social_security": 413,
+            "health": 637,
+            "transport": 214,
+            "environment": 84,
+            "culture": 140
+          }
+        },
+        "equity_per_capita": {
+          "value": 10175
+        },
+        "debt_per_capita": {
+          "value": 5120
+        },
+        "gross_debt_ratio": {
+          "value": 37
+        },
+        "investment_share": {
+          "value": 7.3
+        }
+      }
+    },
+    {
+      "bfsNumber": 8,
+      "name": "Maschwanden",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 6774,
+          "components": {
+            "administration": 1014,
+            "public_order": 127,
+            "education": 3729,
+            "social_security": 407,
+            "health": 781,
+            "transport": 126,
+            "environment": 178,
+            "culture": 412
+          }
+        },
+        "equity_per_capita": {
+          "value": 6113
+        },
+        "debt_per_capita": {
+          "value": 12080
+        },
+        "gross_debt_ratio": {
+          "value": 84.5
+        },
+        "investment_share": {
+          "value": 2.9
+        }
+      }
+    },
+    {
+      "bfsNumber": 195,
+      "name": "Maur",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4881,
+          "components": {
+            "administration": 583,
+            "public_order": 205,
+            "education": 2389,
+            "social_security": 524,
+            "health": 457,
+            "transport": 381,
+            "environment": 127,
+            "culture": 215
+          }
+        },
+        "equity_per_capita": {
+          "value": 19874
+        },
+        "debt_per_capita": {
+          "value": 4870
+        },
+        "gross_debt_ratio": {
+          "value": 45.2
+        },
+        "investment_share": {
+          "value": 4.4
+        }
+      }
+    },
+    {
+      "bfsNumber": 156,
+      "name": "Meilen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5668,
+          "components": {
+            "administration": 717,
+            "public_order": 290,
+            "education": 2619,
+            "social_security": 503,
+            "health": 673,
+            "transport": 397,
+            "environment": 120,
+            "culture": 349
+          }
+        },
+        "equity_per_capita": {
+          "value": 14464
+        },
+        "debt_per_capita": {
+          "value": 9027
+        },
+        "gross_debt_ratio": {
+          "value": 36.1
+        },
+        "investment_share": {
+          "value": 12.1
+        }
+      }
+    },
+    {
+      "bfsNumber": 9,
+      "name": "Mettmenstetten",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4776,
+          "components": {
+            "administration": 385,
+            "public_order": 180,
+            "education": 3019,
+            "social_security": 641,
+            "health": 284,
+            "transport": 112,
+            "environment": 52,
+            "culture": 103
+          }
+        },
+        "equity_per_capita": {
+          "value": 9893
+        },
+        "debt_per_capita": {
+          "value": 6698
+        },
+        "gross_debt_ratio": {
+          "value": 98
+        },
+        "investment_share": {
+          "value": 15.3
+        }
+      }
+    },
+    {
+      "bfsNumber": 196,
+      "name": "Mönchaltorf",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4870,
+          "components": {
+            "administration": 594,
+            "public_order": 269,
+            "education": 2477,
+            "social_security": 553,
+            "health": 468,
+            "transport": 247,
+            "environment": 77,
+            "culture": 185
+          }
+        },
+        "equity_per_capita": {
+          "value": 9333
+        },
+        "debt_per_capita": {
+          "value": 3630
+        },
+        "gross_debt_ratio": {
+          "value": 41.6
+        },
+        "investment_share": {
+          "value": 11
+        }
+      }
+    },
+    {
+      "bfsNumber": 88,
+      "name": "Neerach",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4564,
+          "components": {
+            "administration": 570,
+            "public_order": 167,
+            "education": 2743,
+            "social_security": 384,
+            "health": 386,
+            "transport": 165,
+            "environment": 53,
+            "culture": 96
+          }
+        },
+        "equity_per_capita": {
+          "value": 14874
+        },
+        "debt_per_capita": {
+          "value": 7171
+        },
+        "gross_debt_ratio": {
+          "value": 31.9
+        },
+        "investment_share": {
+          "value": 9.4
+        }
+      }
+    },
+    {
+      "bfsNumber": 223,
+      "name": "Neftenbach",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4100,
+          "components": {
+            "administration": 274,
+            "public_order": 154,
+            "education": 2539,
+            "social_security": 301,
+            "health": 394,
+            "transport": 182,
+            "environment": 56,
+            "culture": 200
+          }
+        },
+        "equity_per_capita": {
+          "value": 8200
+        },
+        "debt_per_capita": {
+          "value": 2206
+        },
+        "gross_debt_ratio": {
+          "value": 29
+        },
+        "investment_share": {
+          "value": 8.1
+        }
+      }
+    },
+    {
+      "bfsNumber": 89,
+      "name": "Niederglatt",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4609,
+          "components": {
+            "administration": 513,
+            "public_order": 202,
+            "education": 2583,
+            "social_security": 433,
+            "health": 546,
+            "transport": 221,
+            "environment": 38,
+            "culture": 73
+          }
+        },
+        "equity_per_capita": {
+          "value": 10641
+        },
+        "debt_per_capita": {
+          "value": 4408
+        },
+        "gross_debt_ratio": {
+          "value": 43.2
+        },
+        "investment_share": {
+          "value": 15
+        }
+      }
+    },
+    {
+      "bfsNumber": 90,
+      "name": "Niederhasli",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5138,
+          "components": {
+            "administration": 338,
+            "public_order": 275,
+            "education": 2816,
+            "social_security": 756,
+            "health": 485,
+            "transport": 180,
+            "environment": 43,
+            "culture": 245
+          }
+        },
+        "equity_per_capita": {
+          "value": 10301
+        },
+        "debt_per_capita": {
+          "value": 3471
+        },
+        "gross_debt_ratio": {
+          "value": 35.1
+        },
+        "investment_share": {
+          "value": 10.5
+        }
+      }
+    },
+    {
+      "bfsNumber": 91,
+      "name": "Niederweningen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4414,
+          "components": {
+            "administration": 423,
+            "public_order": 236,
+            "education": 2397,
+            "social_security": 449,
+            "health": 450,
+            "transport": 284,
+            "environment": 39,
+            "culture": 136
+          }
+        },
+        "equity_per_capita": {
+          "value": 9916
+        },
+        "debt_per_capita": {
+          "value": 4964
+        },
+        "gross_debt_ratio": {
+          "value": 62.7
+        },
+        "investment_share": {
+          "value": 9.6
+        }
+      }
+    },
+    {
+      "bfsNumber": 64,
+      "name": "Nürensdorf",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4025,
+          "components": {
+            "administration": 473,
+            "public_order": 188,
+            "education": 2185,
+            "social_security": 382,
+            "health": 467,
+            "transport": 133,
+            "environment": 90,
+            "culture": 107
+          }
+        },
+        "equity_per_capita": {
+          "value": 8983
+        },
+        "debt_per_capita": {
+          "value": 1901
+        },
+        "gross_debt_ratio": {
+          "value": 27.1
+        },
+        "investment_share": {
+          "value": 5.8
+        }
+      }
+    },
+    {
+      "bfsNumber": 65,
+      "name": "Oberembrach",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4621,
+          "components": {
+            "administration": 544,
+            "public_order": 223,
+            "education": 2583,
+            "social_security": 531,
+            "health": 409,
+            "transport": 143,
+            "environment": 120,
+            "culture": 68
+          }
+        },
+        "equity_per_capita": {
+          "value": 11190
+        },
+        "debt_per_capita": {
+          "value": 6491
+        },
+        "gross_debt_ratio": {
+          "value": 70
+        },
+        "investment_share": {
+          "value": 19.7
+        }
+      }
+    },
+    {
+      "bfsNumber": 245,
+      "name": "Oberengstringen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4884,
+          "components": {
+            "administration": 462,
+            "public_order": 168,
+            "education": 2240,
+            "social_security": 1054,
+            "health": 658,
+            "transport": 133,
+            "environment": 51,
+            "culture": 118
+          }
+        },
+        "equity_per_capita": {
+          "value": 8292
+        },
+        "debt_per_capita": {
+          "value": 5715
+        },
+        "gross_debt_ratio": {
+          "value": 77.1
+        },
+        "investment_share": {
+          "value": 5.1
+        }
+      }
+    },
+    {
+      "bfsNumber": 92,
+      "name": "Oberglatt",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5301,
+          "components": {
+            "administration": 548,
+            "public_order": 280,
+            "education": 2733,
+            "social_security": 890,
+            "health": 409,
+            "transport": 288,
+            "environment": 45,
+            "culture": 108
+          }
+        },
+        "equity_per_capita": {
+          "value": 9469
+        },
+        "debt_per_capita": {
+          "value": 4318
+        },
+        "gross_debt_ratio": {
+          "value": 41.6
+        },
+        "investment_share": {
+          "value": 13.1
+        }
+      }
+    },
+    {
+      "bfsNumber": 137,
+      "name": "Oberrieden",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5596,
+          "components": {
+            "administration": 722,
+            "public_order": 170,
+            "education": 2621,
+            "social_security": 715,
+            "health": 676,
+            "transport": 327,
+            "environment": 71,
+            "culture": 294
+          }
+        },
+        "equity_per_capita": {
+          "value": 7124
+        },
+        "debt_per_capita": {
+          "value": 6716
+        },
+        "gross_debt_ratio": {
+          "value": 43
+        },
+        "investment_share": {
+          "value": 7.9
+        }
+      }
+    },
+    {
+      "bfsNumber": 93,
+      "name": "Oberweningen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4321,
+          "components": {
+            "administration": 345,
+            "public_order": 204,
+            "education": 2397,
+            "social_security": 726,
+            "health": 314,
+            "transport": 221,
+            "environment": 63,
+            "culture": 51
+          }
+        },
+        "equity_per_capita": {
+          "value": 8593
+        },
+        "debt_per_capita": {
+          "value": 2858
+        },
+        "gross_debt_ratio": {
+          "value": 32.9
+        },
+        "investment_share": {
+          "value": 5.7
+        }
+      }
+    },
+    {
+      "bfsNumber": 10,
+      "name": "Obfelden",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5254,
+          "components": {
+            "administration": 419,
+            "public_order": 192,
+            "education": 3054,
+            "social_security": 783,
+            "health": 316,
+            "transport": 263,
+            "environment": 64,
+            "culture": 163
+          }
+        },
+        "equity_per_capita": {
+          "value": 12079
+        },
+        "debt_per_capita": {
+          "value": 3438
+        },
+        "gross_debt_ratio": {
+          "value": 40.2
+        },
+        "investment_share": {
+          "value": 15.5
+        }
+      }
+    },
+    {
+      "bfsNumber": 246,
+      "name": "Oetwil a.d.L.",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4885,
+          "components": {
+            "administration": 556,
+            "public_order": 283,
+            "education": 2623,
+            "social_security": 517,
+            "health": 463,
+            "transport": 248,
+            "environment": 76,
+            "culture": 119
+          }
+        },
+        "equity_per_capita": {
+          "value": 9510
+        },
+        "debt_per_capita": {
+          "value": 4355
+        },
+        "gross_debt_ratio": {
+          "value": 49
+        },
+        "investment_share": {
+          "value": 14.1
+        }
+      }
+    },
+    {
+      "bfsNumber": 157,
+      "name": "Oetwil a.S.",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4701,
+          "components": {
+            "administration": 530,
+            "public_order": 235,
+            "education": 2598,
+            "social_security": 448,
+            "health": 391,
+            "transport": 237,
+            "environment": 74,
+            "culture": 188
+          }
+        },
+        "equity_per_capita": {
+          "value": 10152
+        },
+        "debt_per_capita": {
+          "value": 1733
+        },
+        "gross_debt_ratio": {
+          "value": 19
+        },
+        "investment_share": {
+          "value": 9.3
+        }
+      }
+    },
+    {
+      "bfsNumber": 66,
+      "name": "Opfikon",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5457,
+          "components": {
+            "administration": 409,
+            "public_order": 137,
+            "education": 2824,
+            "social_security": 942,
+            "health": 432,
+            "transport": 344,
+            "environment": 93,
+            "culture": 276
+          }
+        },
+        "equity_per_capita": {
+          "value": 11984
+        },
+        "debt_per_capita": {
+          "value": 9514
+        },
+        "gross_debt_ratio": {
+          "value": 57.4
+        },
+        "investment_share": {
+          "value": 9.7
+        }
+      }
+    },
+    {
+      "bfsNumber": 37,
+      "name": "Ossingen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4402,
+          "components": {
+            "administration": 492,
+            "public_order": 178,
+            "education": 2575,
+            "social_security": 272,
+            "health": 470,
+            "transport": 235,
+            "environment": 111,
+            "culture": 69
+          }
+        },
+        "equity_per_capita": {
+          "value": 10394
+        },
+        "debt_per_capita": {
+          "value": 6457
+        },
+        "gross_debt_ratio": {
+          "value": 58.3
+        },
+        "investment_share": {
+          "value": 7
+        }
+      }
+    },
+    {
+      "bfsNumber": 94,
+      "name": "Otelfingen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5091,
+          "components": {
+            "administration": 555,
+            "public_order": 197,
+            "education": 2824,
+            "social_security": 552,
+            "health": 659,
+            "transport": 243,
+            "environment": 33,
+            "culture": 28
+          }
+        },
+        "equity_per_capita": {
+          "value": 13834
+        },
+        "debt_per_capita": {
+          "value": 5486
+        },
+        "gross_debt_ratio": {
+          "value": 69.3
+        },
+        "investment_share": {
+          "value": 5.5
+        }
+      }
+    },
+    {
+      "bfsNumber": 11,
+      "name": "Ottenbach",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4953,
+          "components": {
+            "administration": 448,
+            "public_order": 203,
+            "education": 2807,
+            "social_security": 652,
+            "health": 472,
+            "transport": 192,
+            "environment": 102,
+            "culture": 77
+          }
+        },
+        "equity_per_capita": {
+          "value": 7198
+        },
+        "debt_per_capita": {
+          "value": 5753
+        },
+        "gross_debt_ratio": {
+          "value": 73.6
+        },
+        "investment_share": {
+          "value": 15.5
+        }
+      }
+    },
+    {
+      "bfsNumber": 177,
+      "name": "Pfäffikon",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4833,
+          "components": {
+            "administration": 202,
+            "public_order": 244,
+            "education": 2614,
+            "social_security": 664,
+            "health": 583,
+            "transport": 235,
+            "environment": 103,
+            "culture": 188
+          }
+        },
+        "equity_per_capita": {
+          "value": 9343
+        },
+        "debt_per_capita": {
+          "value": 4108
+        },
+        "gross_debt_ratio": {
+          "value": 53
+        },
+        "investment_share": {
+          "value": 9.3
+        }
+      }
+    },
+    {
+      "bfsNumber": 224,
+      "name": "Pfungen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4321,
+          "components": {
+            "administration": 437,
+            "public_order": 179,
+            "education": 2511,
+            "social_security": 371,
+            "health": 371,
+            "transport": 265,
+            "environment": 63,
+            "culture": 124
+          }
+        },
+        "equity_per_capita": {
+          "value": 7649
+        },
+        "debt_per_capita": {
+          "value": 3775
+        },
+        "gross_debt_ratio": {
+          "value": 48.8
+        },
+        "investment_share": {
+          "value": 9.2
+        }
+      }
+    },
+    {
+      "bfsNumber": 67,
+      "name": "Rafz",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4484,
+          "components": {
+            "administration": 589,
+            "public_order": 248,
+            "education": 2595,
+            "social_security": 79,
+            "health": 412,
+            "transport": 229,
+            "environment": 47,
+            "culture": 285
+          }
+        },
+        "equity_per_capita": {
+          "value": 10717
+        },
+        "debt_per_capita": {
+          "value": 3935
+        },
+        "gross_debt_ratio": {
+          "value": 53
+        },
+        "investment_share": {
+          "value": 13.7
+        }
+      }
+    },
+    {
+      "bfsNumber": 95,
+      "name": "Regensberg",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 6009,
+          "components": {
+            "administration": 1245,
+            "public_order": 187,
+            "education": 3012,
+            "social_security": 461,
+            "health": 519,
+            "transport": 265,
+            "environment": 85,
+            "culture": 235
+          }
+        },
+        "equity_per_capita": {
+          "value": 8787
+        },
+        "debt_per_capita": {
+          "value": 19285
+        },
+        "gross_debt_ratio": {
+          "value": 197.4
+        },
+        "investment_share": {
+          "value": 6.9
+        }
+      }
+    },
+    {
+      "bfsNumber": 96,
+      "name": "Regensdorf",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5115,
+          "components": {
+            "administration": 472,
+            "public_order": 116,
+            "education": 2533,
+            "social_security": 922,
+            "health": 646,
+            "transport": 234,
+            "environment": 42,
+            "culture": 150
+          }
+        },
+        "equity_per_capita": {
+          "value": 10201
+        },
+        "debt_per_capita": {
+          "value": 8178
+        },
+        "gross_debt_ratio": {
+          "value": 88.8
+        },
+        "investment_share": {
+          "value": 9
+        }
+      }
+    },
+    {
+      "bfsNumber": 38,
+      "name": "Rheinau",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4896,
+          "components": {
+            "administration": 665,
+            "public_order": 312,
+            "education": 2578,
+            "social_security": 349,
+            "health": 551,
+            "transport": 235,
+            "environment": 62,
+            "culture": 144
+          }
+        },
+        "equity_per_capita": {
+          "value": 7586
+        },
+        "debt_per_capita": {
+          "value": 7944
+        },
+        "gross_debt_ratio": {
+          "value": 63.4
+        },
+        "investment_share": {
+          "value": 18.5
+        }
+      }
+    },
+    {
+      "bfsNumber": 138,
+      "name": "Richterswil",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4701,
+          "components": {
+            "administration": 415,
+            "public_order": 137,
+            "education": 2440,
+            "social_security": 712,
+            "health": 499,
+            "transport": 315,
+            "environment": 102,
+            "culture": 81
+          }
+        },
+        "equity_per_capita": {
+          "value": 5637
+        },
+        "debt_per_capita": {
+          "value": 5934
+        },
+        "gross_debt_ratio": {
+          "value": 61.6
+        },
+        "investment_share": {
+          "value": 20.3
+        }
+      }
+    },
+    {
+      "bfsNumber": 225,
+      "name": "Rickenbach",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5022,
+          "components": {
+            "administration": 437,
+            "public_order": 153,
+            "education": 3095,
+            "social_security": 521,
+            "health": 415,
+            "transport": 195,
+            "environment": 49,
+            "culture": 157
+          }
+        },
+        "equity_per_capita": {
+          "value": 7863
+        },
+        "debt_per_capita": {
+          "value": 7148
+        },
+        "gross_debt_ratio": {
+          "value": 85.4
+        },
+        "investment_share": {
+          "value": 25
+        }
+      }
+    },
+    {
+      "bfsNumber": 12,
+      "name": "Rifferswil",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5142,
+          "components": {
+            "administration": 799,
+            "public_order": 323,
+            "education": 3096,
+            "social_security": 224,
+            "health": 364,
+            "transport": 128,
+            "environment": 64,
+            "culture": 144
+          }
+        },
+        "equity_per_capita": {
+          "value": 13357
+        },
+        "debt_per_capita": {
+          "value": 4237
+        },
+        "gross_debt_ratio": {
+          "value": 43.7
+        },
+        "investment_share": {
+          "value": 12.3
+        }
+      }
+    },
+    {
+      "bfsNumber": 68,
+      "name": "Rorbas",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4512,
+          "components": {
+            "administration": 453,
+            "public_order": 158,
+            "education": 2680,
+            "social_security": 598,
+            "health": 323,
+            "transport": 159,
+            "environment": 42,
+            "culture": 99
+          }
+        },
+        "equity_per_capita": {
+          "value": 10803
+        },
+        "debt_per_capita": {
+          "value": 8223
+        },
+        "gross_debt_ratio": {
+          "value": 62.9
+        },
+        "investment_share": {
+          "value": 13.4
+        }
+      }
+    },
+    {
+      "bfsNumber": 97,
+      "name": "Rümlang",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5421,
+          "components": {
+            "administration": 444,
+            "public_order": 303,
+            "education": 2856,
+            "social_security": 470,
+            "health": 668,
+            "transport": 325,
+            "environment": 115,
+            "culture": 240
+          }
+        },
+        "equity_per_capita": {
+          "value": 8061
+        },
+        "debt_per_capita": {
+          "value": 10740
+        },
+        "gross_debt_ratio": {
+          "value": 108.2
+        },
+        "investment_share": {
+          "value": 6.9
+        }
+      }
+    },
+    {
+      "bfsNumber": 139,
+      "name": "Rüschlikon",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5763,
+          "components": {
+            "administration": 778,
+            "public_order": 190,
+            "education": 2802,
+            "social_security": 725,
+            "health": 580,
+            "transport": 274,
+            "environment": 67,
+            "culture": 347
+          }
+        },
+        "equity_per_capita": {
+          "value": 19873
+        },
+        "debt_per_capita": {
+          "value": 7188
+        },
+        "gross_debt_ratio": {
+          "value": 35.8
+        },
+        "investment_share": {
+          "value": 20.7
+        }
+      }
+    },
+    {
+      "bfsNumber": 178,
+      "name": "Russikon",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4855,
+          "components": {
+            "administration": 608,
+            "public_order": 255,
+            "education": 2642,
+            "social_security": 507,
+            "health": 485,
+            "transport": 173,
+            "environment": 86,
+            "culture": 99
+          }
+        },
+        "equity_per_capita": {
+          "value": 8541
+        },
+        "debt_per_capita": {
+          "value": 3260
+        },
+        "gross_debt_ratio": {
+          "value": 43.9
+        },
+        "investment_share": {
+          "value": 32.7
+        }
+      }
+    },
+    {
+      "bfsNumber": 118,
+      "name": "Rüti",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4810,
+          "components": {
+            "administration": 467,
+            "public_order": 205,
+            "education": 2597,
+            "social_security": 522,
+            "health": 540,
+            "transport": 209,
+            "environment": 110,
+            "culture": 160
+          }
+        },
+        "equity_per_capita": {
+          "value": 7565
+        },
+        "debt_per_capita": {
+          "value": 5414
+        },
+        "gross_debt_ratio": {
+          "value": 42.8
+        },
+        "investment_share": {
+          "value": 12.4
+        }
+      }
+    },
+    {
+      "bfsNumber": 226,
+      "name": "Schlatt",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5096,
+          "components": {
+            "administration": 623,
+            "public_order": 246,
+            "education": 2871,
+            "social_security": 437,
+            "health": 333,
+            "transport": 237,
+            "environment": 96,
+            "culture": 253
+          }
+        },
+        "equity_per_capita": {
+          "value": 10005
+        },
+        "debt_per_capita": {
+          "value": 8589
+        },
+        "gross_debt_ratio": {
+          "value": 78.2
+        },
+        "investment_share": {
+          "value": 41.4
+        }
+      }
+    },
+    {
+      "bfsNumber": 98,
+      "name": "Schleinikon",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4404,
+          "components": {
+            "administration": 895,
+            "public_order": 246,
+            "education": 2397,
+            "social_security": 419,
+            "health": 244,
+            "transport": 47,
+            "environment": 68,
+            "culture": 88
+          }
+        },
+        "equity_per_capita": {
+          "value": 8817
+        },
+        "debt_per_capita": {
+          "value": 5062
+        },
+        "gross_debt_ratio": {
+          "value": 67.7
+        },
+        "investment_share": {
+          "value": 16
+        }
+      }
+    },
+    {
+      "bfsNumber": 247,
+      "name": "Schlieren",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4904,
+          "components": {
+            "administration": 650,
+            "public_order": 207,
+            "education": 2357,
+            "social_security": 686,
+            "health": 522,
+            "transport": 213,
+            "environment": 63,
+            "culture": 206
+          }
+        },
+        "equity_per_capita": {
+          "value": 7625
+        },
+        "debt_per_capita": {
+          "value": 9766
+        },
+        "gross_debt_ratio": {
+          "value": 96.6
+        },
+        "investment_share": {
+          "value": 9.5
+        }
+      }
+    },
+    {
+      "bfsNumber": 99,
+      "name": "Schöfflisdorf",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4289,
+          "components": {
+            "administration": 467,
+            "public_order": 188,
+            "education": 2397,
+            "social_security": 391,
+            "health": 435,
+            "transport": 274,
+            "environment": 82,
+            "culture": 55
+          }
+        },
+        "equity_per_capita": {
+          "value": 12113
+        },
+        "debt_per_capita": {
+          "value": 3125
+        },
+        "gross_debt_ratio": {
+          "value": 41.4
+        },
+        "investment_share": {
+          "value": 3.8
+        }
+      }
+    },
+    {
+      "bfsNumber": 197,
+      "name": "Schwerzenbach",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4796,
+          "components": {
+            "administration": 420,
+            "public_order": 296,
+            "education": 2601,
+            "social_security": 711,
+            "health": 318,
+            "transport": 227,
+            "environment": 92,
+            "culture": 131
+          }
+        },
+        "equity_per_capita": {
+          "value": 5748
+        },
+        "debt_per_capita": {
+          "value": 5959
+        },
+        "gross_debt_ratio": {
+          "value": 85.3
+        },
+        "investment_share": {
+          "value": 20.8
+        }
+      }
+    },
+    {
+      "bfsNumber": 119,
+      "name": "Seegräben",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4686,
+          "components": {
+            "administration": 747,
+            "public_order": 233,
+            "education": 2495,
+            "social_security": 346,
+            "health": 487,
+            "transport": 262,
+            "environment": 53,
+            "culture": 63
+          }
+        },
+        "equity_per_capita": {
+          "value": 7887
+        },
+        "debt_per_capita": {
+          "value": 3084
+        },
+        "gross_debt_ratio": {
+          "value": 40.5
+        },
+        "investment_share": {
+          "value": 10.7
+        }
+      }
+    },
+    {
+      "bfsNumber": 227,
+      "name": "Seuzach",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4312,
+          "components": {
+            "administration": 309,
+            "public_order": 205,
+            "education": 2293,
+            "social_security": 456,
+            "health": 675,
+            "transport": 169,
+            "environment": 54,
+            "culture": 151
+          }
+        },
+        "equity_per_capita": {
+          "value": 6125
+        },
+        "debt_per_capita": {
+          "value": 3436
+        },
+        "gross_debt_ratio": {
+          "value": 45.6
+        },
+        "investment_share": {
+          "value": 13.3
+        }
+      }
+    },
+    {
+      "bfsNumber": 100,
+      "name": "Stadel",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4267,
+          "components": {
+            "administration": 348,
+            "public_order": 205,
+            "education": 2539,
+            "social_security": 410,
+            "health": 388,
+            "transport": 241,
+            "environment": 79,
+            "culture": 57
+          }
+        },
+        "equity_per_capita": {
+          "value": 10131
+        },
+        "debt_per_capita": {
+          "value": 2954
+        },
+        "gross_debt_ratio": {
+          "value": 32
+        },
+        "investment_share": {
+          "value": 10.1
+        }
+      }
+    },
+    {
+      "bfsNumber": 158,
+      "name": "Stäfa",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4786,
+          "components": {
+            "administration": 459,
+            "public_order": 234,
+            "education": 2306,
+            "social_security": 643,
+            "health": 731,
+            "transport": 287,
+            "environment": 109,
+            "culture": 17
+          }
+        },
+        "equity_per_capita": {
+          "value": 16137
+        },
+        "debt_per_capita": {
+          "value": 4297
+        },
+        "gross_debt_ratio": {
+          "value": 33.6
+        },
+        "investment_share": {
+          "value": 14.5
+        }
+      }
+    },
+    {
+      "bfsNumber": 13,
+      "name": "Stallikon",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4731,
+          "components": {
+            "administration": 497,
+            "public_order": 184,
+            "education": 2767,
+            "social_security": 309,
+            "health": 355,
+            "transport": 371,
+            "environment": 79,
+            "culture": 169
+          }
+        },
+        "equity_per_capita": {
+          "value": 8979
+        },
+        "debt_per_capita": {
+          "value": 4785
+        },
+        "gross_debt_ratio": {
+          "value": 68.2
+        },
+        "investment_share": {
+          "value": 6.3
+        }
+      }
+    },
+    {
+      "bfsNumber": 292,
+      "name": "Stammheim",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4656,
+          "components": {
+            "administration": 472,
+            "public_order": 176,
+            "education": 2746,
+            "social_security": 447,
+            "health": 451,
+            "transport": 115,
+            "environment": 84,
+            "culture": 165
+          }
+        },
+        "equity_per_capita": {
+          "value": 16549
+        },
+        "debt_per_capita": {
+          "value": 4017
+        },
+        "gross_debt_ratio": {
+          "value": 39
+        },
+        "investment_share": {
+          "value": 19.7
+        }
+      }
+    },
+    {
+      "bfsNumber": 101,
+      "name": "Steinmaur",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4611,
+          "components": {
+            "administration": 444,
+            "public_order": 139,
+            "education": 2654,
+            "social_security": 460,
+            "health": 433,
+            "transport": 229,
+            "environment": 53,
+            "culture": 199
+          }
+        },
+        "equity_per_capita": {
+          "value": 8632
+        },
+        "debt_per_capita": {
+          "value": 4215
+        },
+        "gross_debt_ratio": {
+          "value": 56.3
+        },
+        "investment_share": {
+          "value": 7.9
+        }
+      }
+    },
+    {
+      "bfsNumber": 39,
+      "name": "Thalheim a.d.Th.",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4715,
+          "components": {
+            "administration": 490,
+            "public_order": 233,
+            "education": 2990,
+            "social_security": 509,
+            "health": 285,
+            "transport": 87,
+            "environment": 68,
+            "culture": 53
+          }
+        },
+        "equity_per_capita": {
+          "value": 8743
+        },
+        "debt_per_capita": {
+          "value": 2664
+        },
+        "gross_debt_ratio": {
+          "value": 30.4
+        },
+        "investment_share": {
+          "value": 10.7
+        }
+      }
+    },
+    {
+      "bfsNumber": 141,
+      "name": "Thalwil",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4564,
+          "components": {
+            "administration": 453,
+            "public_order": 237,
+            "education": 2406,
+            "social_security": 216,
+            "health": 559,
+            "transport": 260,
+            "environment": 129,
+            "culture": 304
+          }
+        },
+        "equity_per_capita": {
+          "value": 7520
+        },
+        "debt_per_capita": {
+          "value": 6036
+        },
+        "gross_debt_ratio": {
+          "value": 31.3
+        },
+        "investment_share": {
+          "value": 11.9
+        }
+      }
+    },
+    {
+      "bfsNumber": 40,
+      "name": "Trüllikon",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4738,
+          "components": {
+            "administration": 439,
+            "public_order": 289,
+            "education": 2541,
+            "social_security": 508,
+            "health": 598,
+            "transport": 126,
+            "environment": 93,
+            "culture": 144
+          }
+        },
+        "equity_per_capita": {
+          "value": 10919
+        },
+        "debt_per_capita": {
+          "value": 5191
+        },
+        "gross_debt_ratio": {
+          "value": 57.5
+        },
+        "investment_share": {
+          "value": 7
+        }
+      }
+    },
+    {
+      "bfsNumber": 41,
+      "name": "Truttikon",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5137,
+          "components": {
+            "administration": 731,
+            "public_order": 263,
+            "education": 2856,
+            "social_security": 441,
+            "health": 434,
+            "transport": 196,
+            "environment": 105,
+            "culture": 111
+          }
+        },
+        "equity_per_capita": {
+          "value": 17528
+        },
+        "debt_per_capita": {
+          "value": 6840
+        },
+        "gross_debt_ratio": {
+          "value": 45
+        },
+        "investment_share": {
+          "value": 14.2
+        }
+      }
+    },
+    {
+      "bfsNumber": 228,
+      "name": "Turbenthal",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5356,
+          "components": {
+            "administration": 359,
+            "public_order": 246,
+            "education": 2982,
+            "social_security": 832,
+            "health": 455,
+            "transport": 206,
+            "environment": 133,
+            "culture": 143
+          }
+        },
+        "equity_per_capita": {
+          "value": 7337
+        },
+        "debt_per_capita": {
+          "value": 5073
+        },
+        "gross_debt_ratio": {
+          "value": 44.6
+        },
+        "investment_share": {
+          "value": 6.3
+        }
+      }
+    },
+    {
+      "bfsNumber": 159,
+      "name": "Uetikon a.S.",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4682,
+          "components": {
+            "administration": 681,
+            "public_order": 268,
+            "education": 2092,
+            "social_security": 204,
+            "health": 470,
+            "transport": 341,
+            "environment": 130,
+            "culture": 496
+          }
+        },
+        "equity_per_capita": {
+          "value": 8549
+        },
+        "debt_per_capita": {
+          "value": 7468
+        },
+        "gross_debt_ratio": {
+          "value": 66.4
+        },
+        "investment_share": {
+          "value": 6.7
+        }
+      }
+    },
+    {
+      "bfsNumber": 248,
+      "name": "Uitikon",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5364,
+          "components": {
+            "administration": 671,
+            "public_order": 206,
+            "education": 2636,
+            "social_security": 552,
+            "health": 528,
+            "transport": 400,
+            "environment": 68,
+            "culture": 303
+          }
+        },
+        "equity_per_capita": {
+          "value": 15485
+        },
+        "debt_per_capita": {
+          "value": 8706
+        },
+        "gross_debt_ratio": {
+          "value": 77.3
+        },
+        "investment_share": {
+          "value": 27.7
+        }
+      }
+    },
+    {
+      "bfsNumber": 249,
+      "name": "Unterengstringen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4579,
+          "components": {
+            "administration": 588,
+            "public_order": 211,
+            "education": 2234,
+            "social_security": 608,
+            "health": 510,
+            "transport": 223,
+            "environment": 26,
+            "culture": 179
+          }
+        },
+        "equity_per_capita": {
+          "value": 5463
+        },
+        "debt_per_capita": {
+          "value": 6899
+        },
+        "gross_debt_ratio": {
+          "value": 99.4
+        },
+        "investment_share": {
+          "value": 17.2
+        }
+      }
+    },
+    {
+      "bfsNumber": 250,
+      "name": "Urdorf",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4514,
+          "components": {
+            "administration": 434,
+            "public_order": 254,
+            "education": 2363,
+            "social_security": 362,
+            "health": 465,
+            "transport": 235,
+            "environment": 105,
+            "culture": 296
+          }
+        },
+        "equity_per_capita": {
+          "value": 7179
+        },
+        "debt_per_capita": {
+          "value": 3538
+        },
+        "gross_debt_ratio": {
+          "value": 35.2
+        },
+        "investment_share": {
+          "value": 7.3
+        }
+      }
+    },
+    {
+      "bfsNumber": 198,
+      "name": "Uster",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5261,
+          "components": {
+            "administration": 466,
+            "public_order": 292,
+            "education": 2525,
+            "social_security": 767,
+            "health": 526,
+            "transport": 300,
+            "environment": 104,
+            "culture": 281
+          }
+        },
+        "equity_per_capita": {
+          "value": 9669
+        },
+        "debt_per_capita": {
+          "value": 7402
+        },
+        "gross_debt_ratio": {
+          "value": 72.5
+        },
+        "investment_share": {
+          "value": 13.8
+        }
+      }
+    },
+    {
+      "bfsNumber": 43,
+      "name": "Volken",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5703,
+          "components": {
+            "administration": 1214,
+            "public_order": 232,
+            "education": 2502,
+            "social_security": 549,
+            "health": 737,
+            "transport": 266,
+            "environment": 152,
+            "culture": 51
+          }
+        },
+        "equity_per_capita": {
+          "value": 11147
+        },
+        "debt_per_capita": {
+          "value": 8293
+        },
+        "gross_debt_ratio": {
+          "value": 64.4
+        },
+        "investment_share": {
+          "value": 6.5
+        }
+      }
+    },
+    {
+      "bfsNumber": 199,
+      "name": "Volketswil",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4417,
+          "components": {
+            "administration": 260,
+            "public_order": 278,
+            "education": 2385,
+            "social_security": 605,
+            "health": 500,
+            "transport": 186,
+            "environment": 54,
+            "culture": 149
+          }
+        },
+        "equity_per_capita": {
+          "value": 7787
+        },
+        "debt_per_capita": {
+          "value": 5005
+        },
+        "gross_debt_ratio": {
+          "value": 48.1
+        },
+        "investment_share": {
+          "value": 9.9
+        }
+      }
+    },
+    {
+      "bfsNumber": 293,
+      "name": "Wädenswil",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4875,
+          "components": {
+            "administration": 233,
+            "public_order": 232,
+            "education": 2503,
+            "social_security": 862,
+            "health": 468,
+            "transport": 249,
+            "environment": 137,
+            "culture": 191
+          }
+        },
+        "equity_per_capita": {
+          "value": 6247
+        },
+        "debt_per_capita": {
+          "value": 5813
+        },
+        "gross_debt_ratio": {
+          "value": 49
+        },
+        "investment_share": {
+          "value": 20.1
+        }
+      }
+    },
+    {
+      "bfsNumber": 120,
+      "name": "Wald",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5230,
+          "components": {
+            "administration": 425,
+            "public_order": 192,
+            "education": 2680,
+            "social_security": 694,
+            "health": 676,
+            "transport": 284,
+            "environment": 108,
+            "culture": 171
+          }
+        },
+        "equity_per_capita": {
+          "value": 6730
+        },
+        "debt_per_capita": {
+          "value": 4308
+        },
+        "gross_debt_ratio": {
+          "value": 47.6
+        },
+        "investment_share": {
+          "value": 19.1
+        }
+      }
+    },
+    {
+      "bfsNumber": 69,
+      "name": "Wallisellen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5070,
+          "components": {
+            "administration": 616,
+            "public_order": 251,
+            "education": 2332,
+            "social_security": 678,
+            "health": 577,
+            "transport": 329,
+            "environment": 52,
+            "culture": 235
+          }
+        },
+        "equity_per_capita": {
+          "value": 10811
+        },
+        "debt_per_capita": {
+          "value": 7284
+        },
+        "gross_debt_ratio": {
+          "value": 44.3
+        },
+        "investment_share": {
+          "value": 9.3
+        }
+      }
+    },
+    {
+      "bfsNumber": 200,
+      "name": "Wangen-Brüttisellen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4386,
+          "components": {
+            "administration": 492,
+            "public_order": 232,
+            "education": 2325,
+            "social_security": 541,
+            "health": 312,
+            "transport": 216,
+            "environment": 95,
+            "culture": 173
+          }
+        },
+        "equity_per_capita": {
+          "value": 6716
+        },
+        "debt_per_capita": {
+          "value": 2473
+        },
+        "gross_debt_ratio": {
+          "value": 37.2
+        },
+        "investment_share": {
+          "value": 16.6
+        }
+      }
+    },
+    {
+      "bfsNumber": 70,
+      "name": "Wasterkingen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4920,
+          "components": {
+            "administration": 948,
+            "public_order": 220,
+            "education": 2642,
+            "social_security": 230,
+            "health": 547,
+            "transport": 107,
+            "environment": 126,
+            "culture": 100
+          }
+        },
+        "equity_per_capita": {
+          "value": 12647
+        },
+        "debt_per_capita": {
+          "value": 6047
+        },
+        "gross_debt_ratio": {
+          "value": 49.6
+        },
+        "investment_share": {
+          "value": 11.9
+        }
+      }
+    },
+    {
+      "bfsNumber": 102,
+      "name": "Weiach",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4950,
+          "components": {
+            "administration": 628,
+            "public_order": 188,
+            "education": 2931,
+            "social_security": 566,
+            "health": 321,
+            "transport": 192,
+            "environment": 69,
+            "culture": 55
+          }
+        },
+        "equity_per_capita": {
+          "value": 13904
+        },
+        "debt_per_capita": {
+          "value": 3887
+        },
+        "gross_debt_ratio": {
+          "value": 27.9
+        },
+        "investment_share": {
+          "value": 15.7
+        }
+      }
+    },
+    {
+      "bfsNumber": 251,
+      "name": "Weiningen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 3826,
+          "components": {
+            "administration": 388,
+            "public_order": 288,
+            "education": 2534,
+            "social_security": 3,
+            "health": 335,
+            "transport": 196,
+            "environment": 46,
+            "culture": 36
+          }
+        },
+        "equity_per_capita": {
+          "value": 5764
+        },
+        "debt_per_capita": {
+          "value": 10145
+        },
+        "gross_debt_ratio": {
+          "value": 128.7
+        },
+        "investment_share": {
+          "value": 11.2
+        }
+      }
+    },
+    {
+      "bfsNumber": 180,
+      "name": "Weisslingen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4486,
+          "components": {
+            "administration": 601,
+            "public_order": 230,
+            "education": 2250,
+            "social_security": 543,
+            "health": 427,
+            "transport": 267,
+            "environment": 85,
+            "culture": 83
+          }
+        },
+        "equity_per_capita": {
+          "value": 9198
+        },
+        "debt_per_capita": {
+          "value": 4645
+        },
+        "gross_debt_ratio": {
+          "value": 54.1
+        },
+        "investment_share": {
+          "value": 12.5
+        }
+      }
+    },
+    {
+      "bfsNumber": 14,
+      "name": "Wettswil a.A.",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5137,
+          "components": {
+            "administration": 291,
+            "public_order": 223,
+            "education": 3209,
+            "social_security": 462,
+            "health": 433,
+            "transport": 275,
+            "environment": 83,
+            "culture": 161
+          }
+        },
+        "equity_per_capita": {
+          "value": 10682
+        },
+        "debt_per_capita": {
+          "value": 6925
+        },
+        "gross_debt_ratio": {
+          "value": 52.8
+        },
+        "investment_share": {
+          "value": 4.5
+        }
+      }
+    },
+    {
+      "bfsNumber": 121,
+      "name": "Wetzikon",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5293,
+          "components": {
+            "administration": 402,
+            "public_order": 181,
+            "education": 2475,
+            "social_security": 1014,
+            "health": 659,
+            "transport": 262,
+            "environment": 146,
+            "culture": 154
+          }
+        },
+        "equity_per_capita": {
+          "value": 12549
+        },
+        "debt_per_capita": {
+          "value": 4770
+        },
+        "gross_debt_ratio": {
+          "value": 40.3
+        },
+        "investment_share": {
+          "value": 12
+        }
+      }
+    },
+    {
+      "bfsNumber": 298,
+      "name": "Wiesendangen",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4167,
+          "components": {
+            "administration": 223,
+            "public_order": 187,
+            "education": 2279,
+            "social_security": 495,
+            "health": 535,
+            "transport": 141,
+            "environment": 72,
+            "culture": 235
+          }
+        },
+        "equity_per_capita": {
+          "value": 9646
+        },
+        "debt_per_capita": {
+          "value": 5501
+        },
+        "gross_debt_ratio": {
+          "value": 81.9
+        },
+        "investment_share": {
+          "value": 9
+        }
+      }
+    },
+    {
+      "bfsNumber": 71,
+      "name": "Wil",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4274,
+          "components": {
+            "administration": 92,
+            "public_order": 237,
+            "education": 2642,
+            "social_security": 293,
+            "health": 473,
+            "transport": 256,
+            "environment": 147,
+            "culture": 134
+          }
+        },
+        "equity_per_capita": {
+          "value": 11352
+        },
+        "debt_per_capita": {
+          "value": 4998
+        },
+        "gross_debt_ratio": {
+          "value": 50.9
+        },
+        "investment_share": {
+          "value": 16.5
+        }
+      }
+    },
+    {
+      "bfsNumber": 181,
+      "name": "Wila",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4420,
+          "components": {
+            "administration": 707,
+            "public_order": 221,
+            "education": 2577,
+            "social_security": -42,
+            "health": 402,
+            "transport": 333,
+            "environment": 143,
+            "culture": 79
+          }
+        },
+        "equity_per_capita": {
+          "value": 11365
+        },
+        "debt_per_capita": {
+          "value": 7210
+        },
+        "gross_debt_ratio": {
+          "value": 52.1
+        },
+        "investment_share": {
+          "value": 13.6
+        }
+      }
+    },
+    {
+      "bfsNumber": 182,
+      "name": "Wildberg",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5160,
+          "components": {
+            "administration": 985,
+            "public_order": 189,
+            "education": 2986,
+            "social_security": 239,
+            "health": 386,
+            "transport": 117,
+            "environment": 133,
+            "culture": 125
+          }
+        },
+        "equity_per_capita": {
+          "value": 14358
+        },
+        "debt_per_capita": {
+          "value": 2972
+        },
+        "gross_debt_ratio": {
+          "value": 32.4
+        },
+        "investment_share": {
+          "value": 10.4
+        }
+      }
+    },
+    {
+      "bfsNumber": 72,
+      "name": "Winkel",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4423,
+          "components": {
+            "administration": 506,
+            "public_order": 228,
+            "education": 2453,
+            "social_security": 495,
+            "health": 396,
+            "transport": 204,
+            "environment": 59,
+            "culture": 82
+          }
+        },
+        "equity_per_capita": {
+          "value": 13774
+        },
+        "debt_per_capita": {
+          "value": 3791
+        },
+        "gross_debt_ratio": {
+          "value": 30.9
+        },
+        "investment_share": {
+          "value": 7
+        }
+      }
+    },
+    {
+      "bfsNumber": 230,
+      "name": "Winterthur",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 6225,
+          "components": {
+            "administration": 178,
+            "public_order": 471,
+            "education": 2680,
+            "social_security": 1414,
+            "health": 547,
+            "transport": 353,
+            "environment": 90,
+            "culture": 492
+          }
+        },
+        "equity_per_capita": {
+          "value": 2350
+        },
+        "debt_per_capita": {
+          "value": 17139
+        },
+        "gross_debt_ratio": {
+          "value": 97.3
+        },
+        "investment_share": {
+          "value": 13
+        }
+      }
+    },
+    {
+      "bfsNumber": 231,
+      "name": "Zell",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 4567,
+          "components": {
+            "administration": 469,
+            "public_order": 164,
+            "education": 2659,
+            "social_security": 477,
+            "health": 497,
+            "transport": 156,
+            "environment": 66,
+            "culture": 79
+          }
+        },
+        "equity_per_capita": {
+          "value": 5279
+        },
+        "debt_per_capita": {
+          "value": 2318
+        },
+        "gross_debt_ratio": {
+          "value": 25.7
+        },
+        "investment_share": {
+          "value": 18.3
+        }
+      }
+    },
+    {
+      "bfsNumber": 161,
+      "name": "Zollikon",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5691,
+          "components": {
+            "administration": 799,
+            "public_order": 217,
+            "education": 2562,
+            "social_security": 476,
+            "health": 715,
+            "transport": 357,
+            "environment": 117,
+            "culture": 448
+          }
+        },
+        "equity_per_capita": {
+          "value": 18402
+        },
+        "debt_per_capita": {
+          "value": 4083
+        },
+        "gross_debt_ratio": {
+          "value": 23.5
+        },
+        "investment_share": {
+          "value": 5.7
+        }
+      }
+    },
+    {
+      "bfsNumber": 160,
+      "name": "Zumikon",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 6099,
+          "components": {
+            "administration": 1050,
+            "public_order": 289,
+            "education": 2301,
+            "social_security": 667,
+            "health": 649,
+            "transport": 555,
+            "environment": 92,
+            "culture": 496
+          }
+        },
+        "equity_per_capita": {
+          "value": 20071
+        },
+        "debt_per_capita": {
+          "value": 13623
+        },
+        "gross_debt_ratio": {
+          "value": 88.7
+        },
+        "investment_share": {
+          "value": 15.4
+        }
+      }
+    },
+    {
+      "bfsNumber": 261,
+      "name": "Zürich",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 7868,
+          "components": {
+            "administration": 793,
+            "public_order": 831,
+            "education": 2812,
+            "social_security": 1063,
+            "health": 969,
+            "transport": 524,
+            "environment": 158,
+            "culture": 718
+          }
+        },
+        "equity_per_capita": {
+          "value": 6584
+        },
+        "debt_per_capita": {
+          "value": 22762
+        },
+        "gross_debt_ratio": {
+          "value": 89.5
+        },
+        "investment_share": {
+          "value": 14.9
+        }
+      }
+    },
+    {
+      "bfsNumber": 0,
+      "name": "Zürich - ganzer Kanton",
+      "canton": "ZH",
+      "year": 2024,
+      "metrics": {
+        "operating_expenditure": {
+          "value": 5827,
+          "components": {
+            "administration": 553,
+            "public_order": 401,
+            "education": 2623,
+            "social_security": 807,
+            "health": 640,
+            "transport": 339,
+            "environment": 108,
+            "culture": 356
+          }
+        },
+        "equity_per_capita": {
+          "value": 8255
+        },
+        "debt_per_capita": {
+          "value": 11680
+        },
+        "gross_debt_ratio": {
+          "value": 74.8
+        },
+        "investment_share": {
+          "value": 13.7
+        }
+      }
+    }
+  ],
+  "builtAt": "2026-06-26T09:27:34.814Z"
+}

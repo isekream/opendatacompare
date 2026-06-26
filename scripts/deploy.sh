@@ -49,6 +49,7 @@ fi
   set -euo pipefail
   cd '\${REMOTE_DIR}'
   npm ci
+  npm run data:build
   npm run build
   if pm2 describe opendatacompare >/dev/null 2>&1; then
     pm2 restart opendatacompare
