@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { Search } from "lucide-react";
 
 import { Input } from "@/components/ui/input";
-import { searchGemeinden } from "@/lib/spending/ch-spending";
+import { searchGemeinden, hasSpendingData } from "@/lib/spending/ch-spending";
 import type { GemeindeSpending } from "@/lib/spending/types";
 
 type GemeindeSearchProps = {
@@ -53,8 +53,13 @@ export function GemeindeSearch({
                 onClick={() => selectCommune(commune)}
               >
                 <span className="font-medium">{commune.name}</span>
-                <span className="font-mono text-xs text-muted-foreground">
+                <span className="flex items-center gap-2 font-mono text-xs text-muted-foreground">
                   {commune.canton}
+                  {!hasSpendingData(commune) ? (
+                    <span className="rounded bg-muted px-1.5 py-0.5 font-sans normal-case">
+                      No spending data
+                    </span>
+                  ) : null}
                 </span>
               </button>
             </li>

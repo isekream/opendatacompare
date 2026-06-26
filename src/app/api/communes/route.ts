@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import {
   formatChf,
   getSpendingDataset,
+  hasSpendingData,
   searchGemeinden,
 } from "@/lib/spending/ch-spending";
 
@@ -16,13 +17,15 @@ export async function GET(request: Request) {
     return NextResponse.json({
       year: dataset.year,
       coverage: dataset.coverage,
-      communes: dataset.communes.map((commune) => ({
-        bfsNumber: commune.bfsNumber,
-        name: commune.name,
-        canton: commune.canton,
-        population: commune.population,
-        value: commune.operatingExpenditure.value,
-      })),
+      communes: dataset.communes
+        .filter(hasSpendingData)
+        .map((commune) => ({
+          bfsNumber: commune.bfsNumber,
+          name: commune.name,
+          canton: commune.canton,
+          population: commune.population,
+          value: commune.operatingExpenditure.value,
+        })),
     });
   }
 
@@ -33,8 +36,11 @@ export async function GET(request: Request) {
       canton: commune.canton,
       year: commune.year,
       population: commune.population,
-      value: commune.operatingExpenditure.value,
-      valueLabel: formatChf(commune.operatingExpenditure.value),
+      hasSpendingData: hasSpendingData(commune),
+      value: commune.operatingExpenditure?.value,
+      valueLabel: commune.operatingExpenditure
+        ? formatChf(commune.operatingExpenditure.value)
+        : undefined,
     })),
   });
 }

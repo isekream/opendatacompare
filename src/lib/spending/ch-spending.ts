@@ -1,6 +1,7 @@
 import dataset from "../../../data/ch/ch-gemeinde-spending.json";
 import type {
   GemeindeSpending,
+  GemeindeWithSpending,
   PeerBand,
   SpendingDataset,
   SpendingInterpretation,
@@ -15,19 +16,31 @@ export function getSpendingDataset(): SpendingDataset {
   return spendingDataset;
 }
 
-export function searchGemeinden(query: string, limit = 10): GemeindeSpending[] {
-  const normalized = query.trim().toLowerCase();
-  if (!normalized) return [];
-
-  return spendingDataset.communes
-    .filter((commune) => commune.name.toLowerCase().includes(normalized))
-    .slice(0, limit);
+export function hasSpendingData(
+  commune: GemeindeSpending,
+): commune is GemeindeWithSpending {
+  return commune.operatingExpenditure !== undefined;
 }
 
 export function getGemeindeByBfs(bfsNumber: number): GemeindeSpending | undefined {
   return spendingDataset.communes.find(
     (commune) => commune.bfsNumber === bfsNumber,
   );
+}
+
+export function searchGemeinden(query: string, limit = 10): GemeindeSpending[] {
+  const normalized = query.trim().toLowerCase();
+  if (!normalized) return [];
+
+  return spendingDataset.communes
+    .filter((commune) => commune.name.toLowerCase().includes(normalized))
+    .sort((a, b) => {
+      const aHas = hasSpendingData(a) ? 0 : 1;
+      const bHas = hasSpendingData(b) ? 0 : 1;
+      if (aHas !== bHas) return aHas - bHas;
+      return a.name.localeCompare(b.name, "de");
+    })
+    .slice(0, limit);
 }
 
 export function formatChf(value: number): string {
@@ -46,11 +59,17 @@ function populationDistance(a: GemeindeSpending, b: GemeindeSpending): number {
   return Math.abs(Math.log(a.population) - Math.log(b.population));
 }
 
+function communesWithSpendingData(): GemeindeWithSpending[] {
+  return spendingDataset.communes.filter(hasSpendingData);
+}
+
 export function findPeerGemeinden(
-  commune: GemeindeSpending,
+  commune: GemeindeWithSpending,
   count = PEER_COUNT,
-): GemeindeSpending[] {
-  return spendingDataset.communes
+): GemeindeWithSpending[] {
+  if (!hasSpendingData(commune)) return [];
+
+  return communesWithSpendingData()
     .filter((candidate) => candidate.bfsNumber !== commune.bfsNumber)
     .map((candidate) => ({
       commune: candidate,
@@ -78,6 +97,7 @@ function percentile(sortedValues: number[], p: number): number {
 
 export function peerBandForCommunes(communes: GemeindeSpending[]): PeerBand {
   const values = communes
+    .filter(hasSpendingData)
     .map((commune) => commune.operatingExpenditure.value)
     .sort((a, b) => a - b);
 
@@ -89,7 +109,7 @@ export function peerBandForCommunes(communes: GemeindeSpending[]): PeerBand {
 }
 
 function interpretSpending(
-  commune: GemeindeSpending,
+  commune: GemeindeWithSpending,
   band: PeerBand,
 ): SpendingInterpretation {
   const value = commune.operatingExpenditure.value;
@@ -129,7 +149,7 @@ function interpretSpending(
 
 export function buildSpendingReport(bfsNumber: number): SpendingReport | undefined {
   const commune = getGemeindeByBfs(bfsNumber);
-  if (!commune) return undefined;
+  if (!commune || !hasSpendingData(commune)) return undefined;
 
   const peers = findPeerGemeinden(commune);
   const peerBand = peerBandForCommunes(peers);
@@ -145,4 +165,8 @@ export function buildSpendingReport(bfsNumber: number): SpendingReport | undefin
 
 export function getAllGemeindeBfsNumbers(): number[] {
   return spendingDataset.communes.map((commune) => commune.bfsNumber);
+}
+
+export function getGemeindenWithSpendingBfsNumbers(): number[] {
+  return communesWithSpendingData().map((commune) => commune.bfsNumber);
 }

@@ -14,6 +14,10 @@ import { useChartTheme } from "@/components/charts/use-chart-theme";
 import { formatChf, getSpendingDataset } from "@/lib/spending/ch-spending";
 import type { ExpenditureComponentId, GemeindeSpending } from "@/lib/spending/types";
 
+type GemeindeWithSpending = GemeindeSpending & {
+  operatingExpenditure: NonNullable<GemeindeSpending["operatingExpenditure"]>;
+};
+
 const COMPONENT_HEX: Record<ExpenditureComponentId, string> = {
   administration: "#3b82f6",
   public_order: "#06b6d4",
@@ -26,7 +30,7 @@ const COMPONENT_HEX: Record<ExpenditureComponentId, string> = {
 };
 
 type GemeindeBreakdownChartProps = {
-  commune: GemeindeSpending;
+  commune: GemeindeWithSpending;
 };
 
 export function GemeindeBreakdownChart({ commune }: GemeindeBreakdownChartProps) {

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Extract BFS commune population totals from the published Excel table."""
+"""Extract BFS commune population and names from the published Excel table."""
 import json
 import sys
 import zipfile
@@ -19,7 +19,7 @@ def main() -> None:
             )
 
         sheet = ET.fromstring(archive.read("xl/worksheets/sheet1.xml"))
-        population_by_bfs: dict[str, int] = {}
+        communes: dict[str, dict[str, object]] = {}
 
         for row in sheet.findall(".//m:row", NS):
             values: list[str] = []
@@ -44,11 +44,13 @@ def main() -> None:
             ):
                 continue
 
-            bfs_label = label.split(" ", 1)[0]
+            parts = label.split(" ", 1)
             try:
-                bfs_number = int(bfs_label)
+                bfs_number = int(parts[0])
             except ValueError:
                 continue
+
+            name = parts[1].strip() if len(parts) > 1 else f"Gemeinde {bfs_number}"
 
             try:
                 population = int(str(values[1]).replace("'", "").replace(" ", ""))
@@ -56,9 +58,12 @@ def main() -> None:
                 continue
 
             if population > 0:
-                population_by_bfs[str(bfs_number)] = population
+                communes[str(bfs_number)] = {
+                    "population": population,
+                    "name": name,
+                }
 
-    print(json.dumps(population_by_bfs))
+    print(json.dumps(communes))
 
 
 if __name__ == "__main__":

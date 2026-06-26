@@ -16,9 +16,13 @@ import { useChartTheme } from "@/components/charts/use-chart-theme";
 import { formatChf } from "@/lib/spending/ch-spending";
 import type { GemeindeSpending } from "@/lib/spending/types";
 
+type GemeindeWithSpending = GemeindeSpending & {
+  operatingExpenditure: NonNullable<GemeindeSpending["operatingExpenditure"]>;
+};
+
 type PeerComparisonChartProps = {
-  commune: GemeindeSpending;
-  peers: GemeindeSpending[];
+  commune: GemeindeWithSpending;
+  peers: GemeindeWithSpending[];
   peerMedian: number;
 };
 

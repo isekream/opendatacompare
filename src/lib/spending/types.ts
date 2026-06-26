@@ -26,16 +26,23 @@ export type SpendingMetric = {
   components: { id: ExpenditureComponentId; label: string }[];
 };
 
+export type SpendingDataSource = "efv" | "efv_calibrated";
+
+export type GemeindeWithSpending = GemeindeSpending & {
+  operatingExpenditure: NonNullable<GemeindeSpending["operatingExpenditure"]>;
+};
+
 export type GemeindeSpending = {
   bfsNumber: number;
   name: string;
   canton: string;
   year: number;
   population: number;
-  operatingExpenditure: {
+  operatingExpenditure?: {
     value: number;
     components: Partial<Record<ExpenditureComponentId, number>>;
   };
+  dataSource?: SpendingDataSource;
 };
 
 export type SpendingDataset = {
@@ -45,6 +52,9 @@ export type SpendingDataset = {
     level: string;
     scope: string;
     communeCount: number;
+    withSpendingDataCount: number;
+    efvDirectCount?: number;
+    efvCalibratedCount?: number;
   };
   source: {
     name: string;
@@ -74,8 +84,8 @@ export type SpendingInterpretation = {
 };
 
 export type SpendingReport = {
-  commune: GemeindeSpending;
-  peers: GemeindeSpending[];
+  commune: GemeindeWithSpending;
+  peers: GemeindeWithSpending[];
   peerBand: PeerBand;
   interpretation: SpendingInterpretation;
 };

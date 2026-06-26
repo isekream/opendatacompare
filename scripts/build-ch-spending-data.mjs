@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 /**
- * Builds nationwide Gemeinde operating expenditure (EFV Finanzstatistik)
- * for municipalities with ≥5,000 residents, with BFS population.
+ * Builds nationwide Gemeinde spending data:
+ * - All political municipalities (BFS directory + population)
+ * - Harmonized EFV FS/HRM2 operating expenditure where published
+ * - Canton OGD supplements calibrated to EFV (Zürich small communes)
  */
 import { execFileSync } from "node:child_process";
 import { writeFileSync, mkdirSync, mkdtempSync, rmSync } from "node:fs";
@@ -17,6 +19,11 @@ const EFV_GDN_CSV =
   "https://www.data.finance.admin.ch/static/assets/datasets/fs_dashboard/gdn_ab_5000-d.csv";
 const BFS_POPULATION_XLSX =
   "https://dam-api.bfs.admin.ch/hub/api/dam/assets/32408793/master";
+const BFS_COMMUNE_LEVELS_CSV =
+  "https://www.agvchapp.bfs.admin.ch/api/communes/levels?date=01-01-2024&format=csv";
+const ZH_OGD_BASE = "https://www.web.statistik.zh.ch/ogd/data";
+
+const TARGET_YEAR = 2023;
 
 const EXCLUDED_FUNCTIONS = new Set(["91", "93", "96", "99"]);
 const EXCLUDED_FUNCTION_PREFIXES = ["8", "9"];
@@ -48,6 +55,35 @@ const CANTON_BY_CODE = {
   "24": "NE",
   "25": "GE",
   "26": "JU",
+};
+
+const CANTON_LABEL_TO_CODE = {
+  Zürich: "ZH",
+  "Bern / Berne": "BE",
+  Luzern: "LU",
+  Uri: "UR",
+  Schwyz: "SZ",
+  Obwalden: "OW",
+  Nidwalden: "NW",
+  Glarus: "GL",
+  Zug: "ZG",
+  "Fribourg / Freiburg": "FR",
+  Solothurn: "SO",
+  "Basel-Stadt": "BS",
+  "Basel-Landschaft": "BL",
+  Schaffhausen: "SH",
+  "Appenzell Ausserrhoden": "AR",
+  "Appenzell Innerrhoden": "AI",
+  "St. Gallen": "SG",
+  "Graubünden / Grigioni / Grischun": "GR",
+  Aargau: "AG",
+  Thurgau: "TG",
+  Ticino: "TI",
+  Vaud: "VD",
+  "Valais / Wallis": "VS",
+  Neuchâtel: "NE",
+  Genève: "GE",
+  Jura: "JU",
 };
 
 const COMPONENTS = [
@@ -117,17 +153,28 @@ const FUNK_TO_COMPONENT = {
   "38": "culture",
 };
 
+const ZH_OGD_COMPONENT_FILES = [
+  { id: "administration", file: "KANTON_ZUERICH_420.csv" },
+  { id: "public_order", file: "KANTON_ZUERICH_425.csv" },
+  { id: "education", file: "KANTON_ZUERICH_421.csv" },
+  { id: "social_security", file: "KANTON_ZUERICH_426.csv" },
+  { id: "health", file: "KANTON_ZUERICH_423.csv" },
+  { id: "transport", file: "KANTON_ZUERICH_428.csv" },
+  { id: "environment", file: "KANTON_ZUERICH_427.csv" },
+  { id: "culture", file: "KANTON_ZUERICH_424.csv" },
+];
+
 const METRIC = {
   id: "operating_expenditure",
   label: "Operating expenditure per resident",
   description:
-    "Current service expenditure (FS/HRM2 account class 3) by municipal function, excluding taxes, fiscal transfers, debt administration, and economic development.",
+    "Harmonized current service expenditure (EFV FS/HRM2 account class 3) by municipal function, excluding taxes, fiscal transfers, debt administration, and economic development.",
   format: "currency",
   unit: "CHF",
   unitLabel: "CHF per resident per year",
   methodology: {
     summary:
-      "Sum of EFV Finanzierungsrechnung service-area expenditure (function codes 01–79), expressed per resident.",
+      "Sum of EFV Finanzierungsrechnung service-area expenditure (function codes 01–79), expressed per resident using the same exclusions nationwide.",
     includes: COMPONENTS.map((c) => c.label),
     excludes: [
       "Finanzen/Steuern (taxes, fiscal equalisation)",
@@ -136,10 +183,11 @@ const METRIC = {
       "Nicht aufgeteilte Posten",
     ],
     notes: [
-      "Source: EFV Finanzstatistik gdn_ab_5000 (municipalities ≥5,000 residents).",
-      "Population: BFS ständige Wohnbevölkerung, 31 December (household statistics).",
+      "Primary source: EFV Finanzstatistik (federal harmonization on HRM2).",
+      "Population: BFS ständige Wohnbevölkerung, 31 December (same year as finances).",
       "Peers are municipalities with similar resident population nationwide.",
-      "EFV uses gross current expenditure; canton OGD Nettoaufwand figures may differ.",
+      "Where EFV does not publish individual accounts (<5,000 residents in most cantons), canton OGD Nettoaufwand is scaled to EFV using median overlap ratios — comparable in scope, not identical accounting.",
+      "Canton task allocation still differs; population-based peers mitigate but do not remove structural differences.",
     ],
   },
   components: COMPONENTS,
@@ -167,14 +215,23 @@ async function fetchBuffer(url) {
 
 function parseSemicolonCsv(text) {
   const lines = text.replace(/^\uFEFF/, "").trim().split(/\r?\n/);
-  const header = parseCsvLine(lines[0]);
+  const header = parseCsvLine(lines[0], ";");
   return lines.slice(1).map((line) => {
-    const cols = parseCsvLine(line);
+    const cols = parseCsvLine(line, ";");
     return Object.fromEntries(header.map((key, i) => [key, cols[i] ?? ""]));
   });
 }
 
-function parseCsvLine(line) {
+function parseCommaCsv(text) {
+  const lines = text.replace(/^\uFEFF/, "").trim().split(/\r?\n/);
+  const header = parseCsvLine(lines[0], ",");
+  return lines.slice(1).map((line) => {
+    const cols = parseCsvLine(line, ",");
+    return Object.fromEntries(header.map((key, i) => [key, cols[i] ?? ""]));
+  });
+}
+
+function parseCsvLine(line, delimiter) {
   const result = [];
   let current = "";
   let inQuotes = false;
@@ -185,7 +242,7 @@ function parseCsvLine(line) {
       inQuotes = !inQuotes;
       continue;
     }
-    if (char === ";" && !inQuotes) {
+    if (char === delimiter && !inQuotes) {
       result.push(current);
       current = "";
       continue;
@@ -214,6 +271,16 @@ function isServiceFunction(funk) {
   return !EXCLUDED_FUNCTION_PREFIXES.some((prefix) => funk.startsWith(prefix));
 }
 
+function median(values) {
+  if (values.length === 0) return undefined;
+  const sorted = [...values].sort((a, b) => a - b);
+  const mid = Math.floor(sorted.length / 2);
+  if (sorted.length % 2 === 0) {
+    return (sorted[mid - 1] + sorted[mid]) / 2;
+  }
+  return sorted[mid];
+}
+
 function loadPopulationByBfs(xlsxBuffer) {
   const tempDir = mkdtempSync(join(tmpdir(), "odc-bfs-"));
   const xlsxPath = join(tempDir, "population.xlsx");
@@ -229,11 +296,40 @@ function loadPopulationByBfs(xlsxBuffer) {
   }
 }
 
-function mainFromRows(rows, populationByBfs, targetYear) {
-  const byCommune = new Map();
+function loadBfsCommuneDirectory(csvText) {
+  const rows = parseCommaCsv(csvText);
+  const byBfs = new Map();
 
   for (const row of rows) {
-    if (row.jahr !== String(targetYear)) continue;
+    const bfsNumber = Number(row.BfsCode);
+    const canton = CANTON_LABEL_TO_CODE[row.Canton];
+    const name = row.Name?.trim();
+
+    if (!Number.isFinite(bfsNumber) || !canton || !name) continue;
+
+    byBfs.set(bfsNumber, { bfsNumber, name, canton });
+  }
+
+  return byBfs;
+}
+
+function createCommuneSkeleton(directoryEntry, populationEntry) {
+  return {
+    bfsNumber: directoryEntry.bfsNumber,
+    name: populationEntry?.name ?? directoryEntry.name,
+    canton: directoryEntry.canton,
+    year: TARGET_YEAR,
+    population: populationEntry?.population ?? 0,
+    operatingExpenditure: undefined,
+    dataSource: undefined,
+  };
+}
+
+function applyEfvSpending(communesByBfs, efvRows) {
+  const scratch = new Map();
+
+  for (const row of efvRows) {
+    if (row.jahr !== String(TARGET_YEAR)) continue;
 
     const parsed = parseEfvNr(row.nr);
     if (!parsed) continue;
@@ -249,88 +345,197 @@ function mainFromRows(rows, populationByBfs, targetYear) {
     if (!Number.isFinite(amount)) continue;
 
     const commune =
-      byCommune.get(parsed.bfsNumber) ??
+      scratch.get(parsed.bfsNumber) ??
       {
-        bfsNumber: parsed.bfsNumber,
-        name: row.gemeinde?.trim() || `Gemeinde ${parsed.bfsNumber}`,
-        canton: parsed.canton,
-        year: targetYear,
-        population: 0,
         totalSpend: 0,
         components: {},
+        name: row.gemeinde?.trim(),
       };
 
     commune.name = row.gemeinde?.trim() || commune.name;
-    commune.canton = parsed.canton;
     commune.totalSpend += amount;
     commune.components[componentId] =
       (commune.components[componentId] ?? 0) + amount;
 
-    byCommune.set(parsed.bfsNumber, commune);
+    scratch.set(parsed.bfsNumber, commune);
   }
 
-  const communes = [...byCommune.values()]
-    .map((commune) => {
-      const population = populationByBfs[String(commune.bfsNumber)];
-      if (!population || commune.totalSpend <= 0) return undefined;
+  let applied = 0;
 
-      const perCapita = Math.round(commune.totalSpend / population);
-      const components = Object.fromEntries(
-        Object.entries(commune.components).map(([id, value]) => [
+  for (const [bfsNumber, totals] of scratch) {
+    const commune = communesByBfs.get(bfsNumber);
+    if (!commune || commune.population <= 0 || totals.totalSpend <= 0) continue;
+
+    commune.name = totals.name ?? commune.name;
+    commune.operatingExpenditure = {
+      value: Math.round(totals.totalSpend / commune.population),
+      components: Object.fromEntries(
+        Object.entries(totals.components).map(([id, value]) => [
           id,
-          Math.round(value / population),
+          Math.round(value / commune.population),
         ]),
-      );
+      ),
+    };
+    commune.dataSource = "efv";
+    applied += 1;
+  }
 
-      return {
-        bfsNumber: commune.bfsNumber,
-        name: commune.name,
-        canton: commune.canton,
-        year: commune.year,
-        population,
-        operatingExpenditure: {
-          value: perCapita,
-          components,
-        },
-      };
-    })
-    .filter((commune) => commune !== undefined)
-    .sort((a, b) => a.name.localeCompare(b.name, "de"));
+  return applied;
+}
 
-  return communes;
+async function loadZhOgdSpendingByBfs() {
+  const byBfs = new Map();
+
+  for (const component of ZH_OGD_COMPONENT_FILES) {
+    const rows = parseCommaCsv(
+      await fetchText(`${ZH_OGD_BASE}/${component.file}`),
+    );
+
+    for (const row of rows) {
+      if (row.SUBSET_NAME !== "Gemeinde Nettoaufwand") continue;
+      if (Number(row.INDIKATOR_JAHR) !== TARGET_YEAR) continue;
+
+      const bfsNumber = Number(row.BFS_NR);
+      const value = Number(row.INDIKATOR_VALUE);
+      if (!Number.isFinite(bfsNumber) || !Number.isFinite(value)) continue;
+
+      const commune =
+        byBfs.get(bfsNumber) ??
+        {
+          name: row.GEBIET_NAME?.trim(),
+          totalPerCapita: 0,
+          components: {},
+        };
+
+      commune.name = row.GEBIET_NAME?.trim() || commune.name;
+      commune.components[component.id] = value;
+      commune.totalPerCapita += value;
+      byBfs.set(bfsNumber, commune);
+    }
+  }
+
+  return byBfs;
+}
+
+function computeZhCalibrationRatio(communesByBfs, zhOgdByBfs) {
+  const ratios = [];
+
+  for (const [bfsNumber, ogd] of zhOgdByBfs) {
+    const commune = communesByBfs.get(bfsNumber);
+    if (
+      !commune?.operatingExpenditure ||
+      commune.dataSource !== "efv" ||
+      ogd.totalPerCapita <= 0
+    ) {
+      continue;
+    }
+
+    ratios.push(commune.operatingExpenditure.value / ogd.totalPerCapita);
+  }
+
+  return median(ratios);
+}
+
+function applyCalibratedZhSpending(communesByBfs, zhOgdByBfs, calibrationRatio) {
+  if (!calibrationRatio || !Number.isFinite(calibrationRatio)) return 0;
+
+  let applied = 0;
+
+  for (const [bfsNumber, ogd] of zhOgdByBfs) {
+    const commune = communesByBfs.get(bfsNumber);
+    if (!commune || commune.population <= 0 || ogd.totalPerCapita <= 0) continue;
+    if (commune.operatingExpenditure) continue;
+
+    commune.name = ogd.name ?? commune.name;
+    commune.operatingExpenditure = {
+      value: Math.round(ogd.totalPerCapita * calibrationRatio),
+      components: Object.fromEntries(
+        Object.entries(ogd.components).map(([id, value]) => [
+          id,
+          Math.round(value * calibrationRatio),
+        ]),
+      ),
+    };
+    commune.dataSource = "efv_calibrated";
+    applied += 1;
+  }
+
+  return applied;
 }
 
 async function main() {
+  console.log("Fetching BFS commune directory…");
+  const directoryByBfs = loadBfsCommuneDirectory(
+    await fetchText(BFS_COMMUNE_LEVELS_CSV),
+  );
+
+  console.log(`Fetching BFS population (${TARGET_YEAR})…`);
+  const populationByBfs = loadPopulationByBfs(
+    await fetchBuffer(BFS_POPULATION_XLSX),
+  );
+
+  const communesByBfs = new Map();
+
+  for (const [bfsNumber, directoryEntry] of directoryByBfs) {
+    const populationEntry = populationByBfs[String(bfsNumber)];
+    communesByBfs.set(
+      bfsNumber,
+      createCommuneSkeleton(directoryEntry, populationEntry),
+    );
+  }
+
+  console.log(`Loaded ${communesByBfs.size} municipalities from BFS.`);
+
   console.log("Fetching EFV Gemeinde finances…");
   const efvRows = parseSemicolonCsv(await fetchText(EFV_GDN_CSV));
+  const efvApplied = applyEfvSpending(communesByBfs, efvRows);
+  console.log(`Applied EFV spending to ${efvApplied} municipalities.`);
 
-  const targetYear = efvRows.reduce((max, row) => {
-    const year = Number(row.jahr);
-    return Number.isFinite(year) && year > max ? year : max;
-  }, 0);
+  console.log("Fetching Zürich OGD for calibrated small-commune supplement…");
+  const zhOgdByBfs = await loadZhOgdSpendingByBfs();
+  const calibrationRatio = computeZhCalibrationRatio(communesByBfs, zhOgdByBfs);
+  const zhApplied = applyCalibratedZhSpending(
+    communesByBfs,
+    zhOgdByBfs,
+    calibrationRatio,
+  );
+  console.log(
+    `Applied calibrated ZH OGD spending to ${zhApplied} municipalities (ratio ${calibrationRatio?.toFixed(3) ?? "n/a"}).`,
+  );
 
-  console.log(`Fetching BFS population (${targetYear})…`);
-  const populationByBfs = loadPopulationByBfs(await fetchBuffer(BFS_POPULATION_XLSX));
+  const communes = [...communesByBfs.values()]
+    .filter((commune) => commune.population > 0)
+    .sort((a, b) => a.name.localeCompare(b.name, "de"));
 
-  const communes = mainFromRows(efvRows, populationByBfs, targetYear);
+  const withSpending = communes.filter(
+    (commune) => commune.operatingExpenditure !== undefined,
+  );
 
   const payload = {
-    schemaVersion: 3,
-    year: targetYear,
+    schemaVersion: 4,
+    year: TARGET_YEAR,
     coverage: {
       level: "commune",
-      scope: "Switzerland · municipalities ≥5,000 residents",
+      scope: "All Switzerland political municipalities",
       communeCount: communes.length,
+      withSpendingDataCount: withSpending.length,
+      efvDirectCount: withSpending.filter((c) => c.dataSource === "efv").length,
+      efvCalibratedCount: withSpending.filter(
+        (c) => c.dataSource === "efv_calibrated",
+      ).length,
     },
     source: {
-      name: "Eidgenössische Finanzverwaltung (EFV)",
-      publisher: "EFV Finanzstatistik",
+      name: "Eidgenössische Finanzverwaltung (EFV) + BFS",
+      publisher: "EFV Finanzstatistik / BFS",
       url: "https://www.efv.admin.ch/de/fs-daten",
-      dataset: "gdn_ab_5000-d.csv (FS/HRM2)",
+      dataset:
+        "gdn_ab_5000-d.csv (EFV direct) + Kanton Zürich OGD Nettoaufwand (calibrated)",
       license: "Open Government Data Switzerland",
       populationIndicator:
         "BFS ständige Wohnbevölkerung in Privathaushalten, 31. Dezember",
-      populationUrl: "https://www.bfs.admin.ch/bfs/de/home/statistiken/bevoelkerung.html",
+      populationUrl:
+        "https://www.bfs.admin.ch/bfs/de/home/statistiken/bevoelkerung.html",
+      communeDirectoryUrl: "https://www.agvchapp.bfs.admin.ch/",
     },
     metric: METRIC,
     communes,
@@ -340,7 +545,7 @@ async function main() {
   mkdirSync(dirname(OUT_PATH), { recursive: true });
   writeFileSync(OUT_PATH, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
   console.log(
-    `Wrote ${communes.length} communes for ${targetYear} → ${OUT_PATH}`,
+    `Wrote ${communes.length} municipalities (${withSpending.length} with spending) → ${OUT_PATH}`,
   );
 }
 

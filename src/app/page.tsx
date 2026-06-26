@@ -28,7 +28,9 @@ export default function Home() {
         </div>
 
         <p className="text-xs text-muted-foreground">
-          {dataset.coverage.communeCount} municipalities ({dataset.coverage.scope}) · Source:{" "}
+          {dataset.coverage.communeCount.toLocaleString("de-CH")} municipalities
+          searchable · {dataset.coverage.withSpendingDataCount.toLocaleString("de-CH")}{" "}
+          with harmonized spending data · Source:{" "}
           <a
             href={dataset.source.url}
             className="underline underline-offset-2 hover:text-foreground"
