@@ -15,13 +15,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "OpenDataCompare — Compare public data, anywhere",
+  title: "OpenDataCompare — Municipal spending reports",
   description:
-    "A global platform to compare official government and public datasets side by side — transparent sources, clear metrics, meaningful context.",
+    "Does your municipality spend more or less per resident than similar towns? Official Gemeinde data for Canton Zürich.",
   metadataBase: new URL("https://opendatacompare.com"),
   openGraph: {
     title: "OpenDataCompare",
-    description: "Compare public data, anywhere.",
+    description:
+      "Municipal operating expenditure per resident, compared to similar towns.",
     url: "https://opendatacompare.com",
     siteName: "OpenDataCompare",
     type: "website",

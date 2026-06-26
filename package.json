@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start --port 3003 --hostname 127.0.0.1",
     "lint": "eslint",
-    "data:build": "node scripts/build-zh-expenditure-data.mjs",
+    "data:build": "node scripts/build-zh-spending-data.mjs",
     "deploy": "bash scripts/deploy.sh"
   },
   "dependencies": {
